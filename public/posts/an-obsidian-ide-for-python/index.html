@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>An Obsidian IDE for Python :: Terminal</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="You did what?! Let me explain: You write your notes in your Vault. Then, you run a command, and the code inside becomes a script and executes! And it does so with the environment of your choice already activated.
+Oh, I see now. This is a notebook! No, it’s not. It transforms every code block—including comments—into an independent script.py inside your .obsidian\scripts\python folder. From there, you can grab it and start deploying or packaging it.
+" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="//localhost:1313/posts/an-obsidian-ide-for-python/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/code.min.4f0ccc8439f99bf7f7970298556b94011aabc1fcae743b6842fc3361a2da9ea3.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/main.min.15870410d15d02abd22fb5ef00996f65a00d04b3a7435e9f83831c7c2298de88.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="//localhost:1313/favicon.png">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="An Obsidian IDE for Python">
+<meta property="og:description" content="You did what?! Let me explain: You write your notes in your Vault. Then, you run a command, and the code inside becomes a script and executes! And it does so with the environment of your choice already activated.
+Oh, I see now. This is a notebook! No, it’s not. It transforms every code block—including comments—into an independent script.py inside your .obsidian\scripts\python folder. From there, you can grab it and start deploying or packaging it.
+" />
+<meta property="og:url" content="//localhost:1313/posts/an-obsidian-ide-for-python/" />
+<meta property="og:site_name" content="Terminal" />
+
+  <meta property="og:image" content="//localhost:1313/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="tutorials" />
+
+
+  <meta property="article:published_time" content="2025-02-25 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Terminal
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/about" >About</a></li>
+        
+      
+        
+          <li><a href="/showcase" >Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="//localhost:1313/posts/an-obsidian-ide-for-python/">An Obsidian IDE for Python</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2025-02-25</time></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="//localhost:1313/tags/python/">python</a>&nbsp;
+      
+      #<a href="//localhost:1313/tags/obsidian/">obsidian</a>&nbsp;
+      
+      #<a href="//localhost:1313/tags/how/">how</a>&nbsp;
+      
+      #<a href="//localhost:1313/tags/to/">to</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <h2 id="you-did-what">You did what?!<a href="#you-did-what" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Let me explain: You write your notes in your Vault. Then, you run a command, and the code inside becomes a script and executes! And it does so with the environment of your choice already activated.</p>
+<h2 id="oh-i-see-now-this-is-a-notebook">Oh, I see now. This is a notebook!<a href="#oh-i-see-now-this-is-a-notebook" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>No, it’s not. It transforms every code block—including comments—into an independent <code>script.py</code> inside your <code>.obsidian\scripts\python</code> folder. From there, you can grab it and start deploying or packaging it.</p>
+<p>!<img src="/images/obsidianicon.png" alt="Image Description"></p>
+<h2 id="but-the-python-plugin-doesnt-work-for-me-here">But the Python Plugin doesn’t work for me here&hellip;<a href="#but-the-python-plugin-doesnt-work-for-me-here" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>No problem! You can also run it directly from your CLI/Cmd/PowerShell/Terminal—whatever you’re used to. When you do so, it will:</p>
+<ul>
+<li>Find the most recently updated note in your vault.</li>
+<li>Open it and extract every code block marked as Python. For example:</li>
+</ul>
+<pre tabindex="0"><code># path_venv = D:\some_path\venv  look_a_python some_code = &#34;over here
+</code></pre><ul>
+<li>Use the first comment in the first Python block to determine the virtual environment. If none is specified, it will use your default environment.</li>
+<li>Save all extracted code blocks, in order, inside a <code>.py</code> file in <code>.obsidian\scripts\python</code>, named after the first snake_case word found in the first comment.</li>
+<li>Create a batch file that activates the environment, runs the script, and waits for user input before closing.</li>
+</ul>
+<h2 id="show-this-the-code">Show this the code<a href="#show-this-the-code" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>To make this work, save the following script inside <code>.obsidian\scripts\python</code>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># IDE_py_Obsidian.py</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">subprocess</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">glob</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">sys</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">normalizar_caminho</span><span class="p">(</span><span class="n">caminho</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Normaliza o caminho para usar uma única barra, independente de como foi escrito&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Primeiro substitui barras duplas por barras simples</span>
+</span></span><span class="line"><span class="cl">    <span class="n">caminho</span> <span class="o">=</span> <span class="n">caminho</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Substitui barras normais por barras invertidas</span>
+</span></span><span class="line"><span class="cl">    <span class="n">caminho</span> <span class="o">=</span> <span class="n">caminho</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Remove barras duplas que possam ter sido criadas</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="s1">&#39;</span><span class="se">\\\\</span><span class="s1">&#39;</span> <span class="ow">in</span> <span class="n">caminho</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">caminho</span> <span class="o">=</span> <span class="n">caminho</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\\\\</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">caminho</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">encontrar_arquivo_mais_recente</span><span class="p">(</span><span class="n">vault_path</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Encontra o arquivo markdown mais recentemente modificado no vault&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">arquivos</span> <span class="o">=</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">vault_path</span><span class="p">,</span> <span class="s1">&#39;**/*.md&#39;</span><span class="p">),</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">arquivos</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getmtime</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">extrair_blocos_python</span><span class="p">(</span><span class="n">arquivo_md</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Extrai blocos de código Python e informações do ambiente virtual&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">arquivo_md</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">conteudo</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Encontra blocos de código Python</span>
+</span></span><span class="line"><span class="cl">    <span class="n">padrao</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;```python\s*(.*?)\s*```&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">blocos</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">padrao</span><span class="p">,</span> <span class="n">conteudo</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Blocos encontrados: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">blocos</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Procura pelo path_venv nos comentários</span>
+</span></span><span class="line"><span class="cl">    <span class="n">path_venv</span> <span class="o">=</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">    <span class="n">nome_script</span> <span class="o">=</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">    <span class="n">codigo_completo</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">bloco</span> <span class="ow">in</span> <span class="n">blocos</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Analisando bloco:</span><span class="se">\n</span><span class="si">{</span><span class="n">bloco</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;#\s*path_venv\s*=\s*(.*)\s+(\w+)\s*$&#39;</span><span class="p">,</span> <span class="n">bloco</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="k">match</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">path_venv</span> <span class="o">=</span> <span class="n">normalizar_caminho</span><span class="p">(</span><span class="k">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nome_script</span> <span class="o">=</span> <span class="k">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Path encontrado: </span><span class="si">{</span><span class="n">path_venv</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Nome do script encontrado: </span><span class="si">{</span><span class="n">nome_script</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">codigo_completo</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bloco</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">codigo_completo</span><span class="p">),</span> <span class="n">path_venv</span><span class="p">,</span> <span class="n">nome_script</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">salvar_script_python</span><span class="p">(</span><span class="n">codigo</span><span class="p">,</span> <span class="n">nome_script</span><span class="p">,</span> <span class="n">pasta_scripts</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Salva o código Python extraído em um arquivo .py&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">pasta_scripts</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">pasta_scripts</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">caminho_script</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pasta_scripts</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="n">nome_script</span><span class="si">}</span><span class="s2">.py&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">caminho_script</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">codigo</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">caminho_script</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">criar_batch_script</span><span class="p">(</span><span class="n">path_venv</span><span class="p">,</span> <span class="n">caminho_script</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;Cria um arquivo batch temporário para ativar o ambiente e executar o script&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Garantir que os caminhos estejam corretos</span>
+</span></span><span class="line"><span class="cl">    <span class="n">path_venv</span> <span class="o">=</span> <span class="n">normalizar_caminho</span><span class="p">(</span><span class="n">path_venv</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">caminho_script</span> <span class="o">=</span> <span class="n">normalizar_caminho</span><span class="p">(</span><span class="n">caminho_script</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">conteudo_batch</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;&#34;&#34;@echo off
+</span></span></span><span class="line"><span class="cl"><span class="s2">chcp 65001 &gt; nul
+</span></span></span><span class="line"><span class="cl"><span class="s2">echo Ativando ambiente virtual em </span><span class="si">{</span><span class="n">path_venv</span><span class="si">}</span><span class="s2">...
+</span></span></span><span class="line"><span class="cl"><span class="s2">call &#34;</span><span class="si">{</span><span class="n">path_venv</span><span class="si">}</span><span class="se">\\</span><span class="s2">Scripts</span><span class="se">\\</span><span class="s2">activate.bat&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">echo.
+</span></span></span><span class="line"><span class="cl"><span class="s2">echo Executando script </span><span class="si">{</span><span class="n">caminho_script</span><span class="si">}</span><span class="s2">...
+</span></span></span><span class="line"><span class="cl"><span class="s2">echo.
+</span></span></span><span class="line"><span class="cl"><span class="s2">python &#34;</span><span class="si">{</span><span class="n">caminho_script</span><span class="si">}</span><span class="s2">&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">echo.
+</span></span></span><span class="line"><span class="cl"><span class="s2">echo Execucao finalizada!
+</span></span></span><span class="line"><span class="cl"><span class="s2">echo.
+</span></span></span><span class="line"><span class="cl"><span class="s2">:PROMPT
+</span></span></span><span class="line"><span class="cl"><span class="s2">set /p CONFIRM=&#34;Digite OK para fechar: &#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">if /i &#34;%CONFIRM%&#34; neq &#34;OK&#34; goto PROMPT
+</span></span></span><span class="line"><span class="cl"><span class="s2">exit
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">batch_path</span> <span class="o">=</span> <span class="n">caminho_script</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.py&#39;</span><span class="p">,</span> <span class="s1">&#39;.bat&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Criando batch em: </span><span class="si">{</span><span class="n">batch_path</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Conteúdo do batch:</span><span class="se">\n</span><span class="si">{</span><span class="n">conteudo_batch</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">batch_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">conteudo_batch</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">batch_path</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">vault_path</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Configurações</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pasta_scripts</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">vault_path</span><span class="p">,</span> <span class="s1">&#39;.obsidian&#39;</span><span class="p">,</span> <span class="s1">&#39;scripts&#39;</span><span class="p">,</span> <span class="s1">&#39;python&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Encontra o arquivo mais recente</span>
+</span></span><span class="line"><span class="cl">    <span class="n">arquivo_recente</span> <span class="o">=</span> <span class="n">encontrar_arquivo_mais_recente</span><span class="p">(</span><span class="n">vault_path</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Arquivo mais recente encontrado: </span><span class="si">{</span><span class="n">arquivo_recente</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Extrai o código Python</span>
+</span></span><span class="line"><span class="cl">    <span class="n">codigo</span><span class="p">,</span> <span class="n">path_venv</span><span class="p">,</span> <span class="n">nome_script</span> <span class="o">=</span> <span class="n">extrair_blocos_python</span><span class="p">(</span><span class="n">arquivo_recente</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="n">codigo</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">path_venv</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">nome_script</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Não foi possível encontrar código Python válido ou informações do ambiente virtual&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Código: </span><span class="si">{</span><span class="nb">bool</span><span class="p">(</span><span class="n">codigo</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Path_venv: </span><span class="si">{</span><span class="n">path_venv</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Nome_script: </span><span class="si">{</span><span class="n">nome_script</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Salva o script Python</span>
+</span></span><span class="line"><span class="cl">    <span class="n">caminho_script</span> <span class="o">=</span> <span class="n">salvar_script_python</span><span class="p">(</span><span class="n">codigo</span><span class="p">,</span> <span class="n">nome_script</span><span class="p">,</span> <span class="n">pasta_scripts</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Script salvo em: </span><span class="si">{</span><span class="n">caminho_script</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Cria e executa o batch script</span>
+</span></span><span class="line"><span class="cl">    <span class="n">batch_path</span> <span class="o">=</span> <span class="n">criar_batch_script</span><span class="p">(</span><span class="n">path_venv</span><span class="p">,</span> <span class="n">caminho_script</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Executando batch: </span><span class="si">{</span><span class="n">batch_path</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">batch_path</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Apaga o arquivo batch após a execução</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">batch_path</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">batch_path</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Erro ao executar batch: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&#34;__main__&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">vault_path</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">IndexError</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">vault_path</span> <span class="o">=</span> <span class="s2">&#34;D:</span><span class="se">\\</span><span class="s2">Trabalho</span><span class="se">\\</span><span class="s2">obsidian_vaults</span><span class="se">\\</span><span class="s2">Vault&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">main</span><span class="p">(</span><span class="n">vault_path</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="lets-code-some-more">Let&rsquo;s code some more!<a href="#lets-code-some-more" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>This was a very satisfying exercise that has now become part of my daily workflow. I hope this helps you as well in the projects you have in mind!</p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="//localhost:1313/posts/run-a-powerful-offline-ai-model-from-a-usb-stick-windows-guide/" class="button inline prev">
+        &lt; [<span class="button__text">Run a Powerful Offline AI Model from a USB Stick (Windows Guide)</span>]
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="//localhost:1313/posts/running-a-local-ai-to-interact-with-your-vault/" class="button inline next">
+         [<span class="button__text">Running a Local AI to Interact with Your Vault</span>] &gt;
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

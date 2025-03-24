@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Obsidian on Terminal</title>
+    <link>//localhost:1313/tags/obsidian/</link>
+    <description>Recent content in Obsidian on Terminal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 25 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/obsidian/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>An Obsidian IDE for Python</title>
+      <link>//localhost:1313/posts/an-obsidian-ide-for-python/</link>
+      <pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/an-obsidian-ide-for-python/</guid>
+      <description>&lt;h2 id=&#34;you-did-what&#34;&gt;You did what?!&lt;/h2&gt;&#xA;&lt;p&gt;Let me explain: You write your notes in your Vault. Then, you run a command, and the code inside becomes a script and executes! And it does so with the environment of your choice already activated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;oh-i-see-now-this-is-a-notebook&#34;&gt;Oh, I see now. This is a notebook!&lt;/h2&gt;&#xA;&lt;p&gt;No, it’s not. It transforms every code block—including comments—into an independent &lt;code&gt;script.py&lt;/code&gt; inside your &lt;code&gt;.obsidian\scripts\python&lt;/code&gt; folder. From there, you can grab it and start deploying or packaging it.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Running a Local AI to Interact with Your Vault</title>
+      <link>//localhost:1313/posts/running-a-local-ai-to-interact-with-your-vault/</link>
+      <pubDate>Wed, 20 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/running-a-local-ai-to-interact-with-your-vault/</guid>
+      <description>&lt;h2 id=&#34;from-ollama-installation-to-ai-integration&#34;&gt;From: Ollama Installation. To: AI Integration&lt;/h2&gt;&#xA;&lt;p&gt;Inspired once more by &lt;a href=&#34;https://www.youtube.com/watch?v=Wjrdr0NU4Sk&#34;&gt;NetworkChuck&lt;/a&gt;, this guide walks you through setting up Ollama on your system, integrating various AI models, and enhancing your workflow with ==Stable Diffusion== and ==BMO== or ==Smart Connections== on obsidian. Whether you&amp;rsquo;re a developer or an AI enthusiast, this step-by-step tutorial will help you harness the power of local AI models effectively.&lt;/p&gt;&#xA;&lt;p&gt;If you also enjoy configuring your AI environment and exploring different models, this approach will provide you with the control and flexibility you need!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Building a Blog System Using Obsidian</title>
+      <link>//localhost:1313/posts/building-a-blog-system-using-obsidian/</link>
+      <pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/building-a-blog-system-using-obsidian/</guid>
+      <description>&lt;h2 id=&#34;from-vaults-folder-to-blogs-feed&#34;&gt;From: Vault&amp;rsquo;s folder. To: Blog&amp;rsquo;s feed&lt;/h2&gt;&#xA;&lt;p&gt;This is my personal blogging pipeline, inspired by the content creator &lt;a href=&#34;https://www.youtube.com/watch?v=dnE7c0ELEH8&amp;amp;list=PLazumvohNo-2qvB49-9RL4karLMmqBDas&amp;amp;index=18&#34;&gt;NetWorkChuck&lt;/a&gt;. I hope this guide helps you express your ideas more effectively and share them with the world.&lt;/p&gt;&#xA;&lt;p&gt;If you enjoy maintaining control over your publications and having some code-based automation fun, this approach should serve you well!&lt;/p&gt;&#xA;&lt;p&gt;What’s happening here is that an Obsidian vault is feeding the content of the posts you’re reading right now. Once everything is set up, the process requires minimal effort to keep running smoothly.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

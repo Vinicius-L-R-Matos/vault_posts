@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>Building a Blog System Using Obsidian :: Terminal</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="From: Vault&rsquo;s folder. To: Blog&rsquo;s feed This is my personal blogging pipeline, inspired by the content creator NetWorkChuck. I hope this guide helps you express your ideas more effectively and share them with the world.
+If you enjoy maintaining control over your publications and having some code-based automation fun, this approach should serve you well!
+What’s happening here is that an Obsidian vault is feeding the content of the posts you’re reading right now. Once everything is set up, the process requires minimal effort to keep running smoothly.
+" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="//localhost:1313/posts/building-a-blog-system-using-obsidian/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/code.min.4f0ccc8439f99bf7f7970298556b94011aabc1fcae743b6842fc3361a2da9ea3.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/main.min.15870410d15d02abd22fb5ef00996f65a00d04b3a7435e9f83831c7c2298de88.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="//localhost:1313/favicon.png">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Building a Blog System Using Obsidian">
+<meta property="og:description" content="From: Vault&rsquo;s folder. To: Blog&rsquo;s feed This is my personal blogging pipeline, inspired by the content creator NetWorkChuck. I hope this guide helps you express your ideas more effectively and share them with the world.
+If you enjoy maintaining control over your publications and having some code-based automation fun, this approach should serve you well!
+What’s happening here is that an Obsidian vault is feeding the content of the posts you’re reading right now. Once everything is set up, the process requires minimal effort to keep running smoothly.
+" />
+<meta property="og:url" content="//localhost:1313/posts/building-a-blog-system-using-obsidian/" />
+<meta property="og:site_name" content="Terminal" />
+
+  <meta property="og:image" content="//localhost:1313/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="tutorials" />
+
+
+  <meta property="article:published_time" content="2023-12-13 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Terminal
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/about" >About</a></li>
+        
+      
+        
+          <li><a href="/showcase" >Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="//localhost:1313/posts/building-a-blog-system-using-obsidian/">Building a Blog System Using Obsidian</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2023-12-13</time></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="//localhost:1313/tags/how_to/">how_to</a>&nbsp;
+      
+      #<a href="//localhost:1313/tags/obsidian/">obsidian</a>&nbsp;
+      
+      #<a href="//localhost:1313/tags/blog/">blog</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <h2 id="from-vaults-folder-to-blogs-feed">From: Vault&rsquo;s folder. To: Blog&rsquo;s feed<a href="#from-vaults-folder-to-blogs-feed" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>This is my personal blogging pipeline, inspired by the content creator <a href="https://www.youtube.com/watch?v=dnE7c0ELEH8&amp;list=PLazumvohNo-2qvB49-9RL4karLMmqBDas&amp;index=18">NetWorkChuck</a>. I hope this guide helps you express your ideas more effectively and share them with the world.</p>
+<p>If you enjoy maintaining control over your publications and having some code-based automation fun, this approach should serve you well!</p>
+<p>What’s happening here is that an Obsidian vault is feeding the content of the posts you’re reading right now. Once everything is set up, the process requires minimal effort to keep running smoothly.</p>
+<p>Below, I’ll show you how I built this actually blog that you are reading and how everything works. So you can also do it for youself.</p>
+<h2 id="in-the-past">In the past<a href="#in-the-past" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>For over three years, I relied on <a href="https://vinicius-l-r-matos.github.io/-Repositorio-DS/">this</a> Fastpages blog, which, while highly functional, often proved frustrating due to the lack of full control over errors in Jekyll.</p>
+<p>With its official discontinuation in 2022 and migration to <a href="https://quarto.org/">Quarto</a>, I lost the familiar framework I had used to convert my Markdown files into posts. However, my experience transitioning to Obsidian for this purpose has been exceptional, and I’m eager to share what I’ve learned.</p>
+<h2 id="why-do-this-at-all">Why do this at all?<a href="#why-do-this-at-all" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>The CEO of <a href="https://www.anthropic.com/">Anthropic</a>—a startup founded by former OpenAI members—<a href="https://danielmiessler.com/">Daniel Miessler</a> has shared insightful perspectives on AI, the future, and the transformative impact these technologies may have on our lives. One idea, in particular, resonates strongly with me:<br>
+!<img src="/images/daniel_miessler_x_post.png" alt="Image Description"></p>
+<p>From my understanding, as AI becomes more decentralized, it will enable people across the globe to share ideas and create goods more efficiently. Regardless of whether AI is currently hyped in the tech market, the benefits of fostering open dialogue to improve the global economy are undeniable.</p>
+<p>This idea inspired me to explore the possibility of using a Zettelkasten-like note system to organize thoughts and create an application that directly pulls from a vault to effortlessly generate blog posts. Such a system would be both powerful and productive.</p>
+<p>Like many great discoveries in history, it all begins with just a few words&hellip;</p>
+<h2 id="how-it-works">How it works<a href="#how-it-works" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>The following chart demonstrates how it’s done:
+!<img src="/images/blog_system.png" alt="Image Description">
+Putting it into a few words, it is expected that:</p>
+<ul>
+<li>A post folder is provided.</li>
+<li>Its content is “robocopied” to the appropriate folder in the site’s project.</li>
+<li>A framework called Hugo transforms the Markdown files (and some images, too) into HTML.</li>
+<li>Everything is uploaded to a branch of a remote repository.</li>
+<li>A hosting provider delivers it all!</li>
+</ul>
+<h2 id="the-required-materials">The Required Materials<a href="#the-required-materials" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>The following are needed and will be explained—along with their downloads, installations, and setups—in the next sections:</p>
+<ul>
+<li>Obsidian.</li>
+<li>Git.</li>
+<li>Git hub.</li>
+<li>Hugo.</li>
+<li>Host site.</li>
+<li>Here, I used Windows as the operating system. Feel free to adapt the steps for others.</li>
+</ul>
+<h2 id="the-setup">The Setup<a href="#the-setup" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ul>
+<li><a href="https://obsidian.md/download">Download</a> and install Obsidian.</li>
+<li>In your preferred Vault, create a folder named ==posts==. This folder will house all your blog content.</li>
+<li>Make your &ldquo;<strong>Go</strong>&rdquo; acessible. If havent installed, <a href="https://go.dev/dl/">download</a> and install. It is necessary to make the Hugo work.</li>
+<li><a href="https://gohugo.io/installation/">Download</a> and install <strong>Hugo</strong>. It make possible to convert Markdown into HTML files when called. Use the lastest releases (I use the &ldquo;hugo_0.145.0_windows-amd64.zip&rdquo;) on the Prebuilt binaries section. Look up for a match on your OS.</li>
+<li>Extract hugo.exe. Copy and paste it on a new folder call ==Hugo==. Add this path to your Sistem Variable PATH.</li>
+<li>Make your Git acessible. If still dont, <a href="https://git-scm.com/downloads">download</a> and install. It can handle diferent versions of you files.</li>
+<li>Iniciate a new empty repository where you create you new site with hugo. Configure you email and name for this git.</li>
+<li>Go to the <a href="https://themes.gohugo.io/themes/">Hugo themes</a> list and get one. Use one with ==Install theme as a submodule== on you terminal from the same directory for cloning it.</li>
+<li>Open the local hugo.toml and paste here the configurations that your chosen theme provide. Ignore module and so sections.</li>
+</ul>
+<h2 id="starting-up">Starting Up<a href="#starting-up" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ul>
+<li>Navigate to the directory where you want to store your site files from the CMD. Then, use the following command in your terminal: ==hugo new site [your_site_name]===.</li>
+<li>Inicialize hit repository in the roo of the site projetc, add name and email configs, and find your the theme. Here i chise the terminal:</li>
+</ul>
+<pre tabindex="0"><code>  
+git init
+git config --global user.name &#34;Your Name&#34;
+git config --global user.email &#34;your.email@example.com&#34; 
+#Find a theme ---&gt; https://themes.gohugo.io/ and clone it:
+git submodule add -f https://github.com/panr/hugo-theme-terminal.git themes/terminal
+</code></pre><ul>
+<li>paste inside hugo.toml file the configurations founded at the theme description site. Is att some &ldquo;how to configure section&rdquo;. Make sure to skip module and so parts.</li>
+<li>Run ==hugo server -r [your_chosen_theme]== to see if it is working locally. Acess the server and celebrate! =]</li>
+<li>Open the content folder inside the site directory. Create a ==posts== folder. Inside content folder  use: ==robocopy &ldquo;[source_path]&rdquo; &ldquo;[destination_path]&rdquo; /mir==.</li>
+<li>Back to the site&rsquo;s root and use ==hugo server== for your eyes only. =]. Inside ==public/post== are the html versions of  Obsidian&rsquo;s Markdown files.</li>
+<li>Go to the Obsidian&rsquo;s source mode on your note. Lets take some FrontMater | Metadata | Proprieties to it. Insert between &mdash; and &mdash; the title, date, draft(false) and some tags(this onde on -|bullets). If you like to, You can have some templater on and so&hellip; Use robocopy inside contents &amp; hugo server inside root to see the efects!</li>
+</ul>
+<h2 id="do-some-images-attachments">Do some Images Attachments<a href="#do-some-images-attachments" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ul>
+<li>In your Vault, create a dedicated folder named <code>Attachments</code> for storing all your blog images.</li>
+<li>Now i will put an totally perfect and precise image in this note.
+!<img src="/images/smile.png" alt="Image Description">
+If just do so, it wil be not consider like one to hugo. It need some temper. Spycy! =]</li>
+<li>Paste this script in a imgs.py file on the root of your site. Remember to replace the directories variables (I made some alterations, becose when i did use the Chuck&rsquo;s one, it modifies the original path):</li>
+</ul>
+<pre tabindex="0"><code>import os
+import re
+import shutil
+
+# Paths
+posts_dir = r&#34;D:\Google Drive\DriveSyncFiles\Vault\posts&#34;
+attachments_dir = r&#34;D:\Google Drive\DriveSyncFiles\Vault\Attachments&#34;
+hugo_posts_dir = r&#34;D:\MyBlogStufs\matosdatascienceblog\content\posts&#34;  # New directpry for Hugo
+static_images_dir = r&#34;D:\MyBlogStufs\matosdatascienceblog\static\images&#34;
+
+# Create if not exists
+for dir_path in [hugo_posts_dir, static_images_dir]:
+    if not os.path.exists(dir_path):
+        os.makedirs(dir_path)
+
+# Process every mardown file
+for filename in os.listdir(posts_dir):
+    if filename.endswith(&#34;.md&#34;):
+        # Read original file from Obsidian
+        source_path = os.path.join(posts_dir, filename)
+        with open(source_path, &#34;r&#34;, encoding=&#34;utf-8&#34;) as file:
+            content = file.read()
+        
+        # Find and process images
+        images = re.findall(r&#39;\[\[([^]]*\.png)\]\]&#39;, content)
+        
+        # Make hugo on each one
+        hugo_content = content
+        for image in images:
+            # Replace links only for Hugo&#39;s one
+            markdown_image = f&#34;![Image Description](/images/{image.replace(&#39; &#39;, &#39;%20&#39;)})&#34;
+            hugo_content = hugo_content.replace(f&#34;[[{image}]]&#34;, markdown_image)
+            
+            # Copy image for static on Hugo
+            image_source = os.path.join(attachments_dir, image)
+            if os.path.exists(image_source):
+                shutil.copy(image_source, static_images_dir)
+        
+        # Save in the hupo dir
+        hugo_path = os.path.join(hugo_posts_dir, filename)
+        with open(hugo_path, &#34;w&#34;, encoding=&#34;utf-8&#34;) as file:
+            file.write(hugo_content)
+
+print(&#34;Files processed end copy!&#34;)
+</code></pre><ul>
+<li>And create a ==static/images== folder. Run the python file and see if the image whas transfer!</li>
+</ul>
+<h2 id="test-one">Test one<a href="#test-one" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ul>
+<li>You can save an automation, so when called, it can update and run all:</li>
+</ul>
+<pre tabindex="0"><code># update_blog.py
+import os 
+import subprocess 
+
+# Base directory of the project 
+base_dir = r&#34;my_blog_directory\my_data_science_blog&#34; 
+
+# Commands to execute commands = [ 
+	f&#39;robocopy &#34;D:\\GoogleDrive\\DriveSyncFiles\\Vault\\posts&#34; &#34;{base_dir}\\content\\posts&#34; /mir&#39;, 
+	&#39;python imgs.py&#39;, 
+	&#39;hugo server -t terminal&#39; 
+] 
+
+# Change to the project directory 
+os.chdir(base_dir) 
+
+# Execute commands in sequence 
+for cmd in commands:
+	print(f&#34;Executing: {cmd}&#34;) subprocess.run(cmd, shell=True)
+</code></pre><ul>
+<li>And also do a centralized run file to update all:</li>
+</ul>
+<pre tabindex="0"><code># update_blog.py
+import os
+import subprocess
+
+# Base directory of the project
+base_dir = r&#34;my_blog_directory\my_data_science_blog&#34;
+
+# Commands to be executed
+commands = [
+    f&#39;robocopy &#34;D:\\Google Drive\\DriveSyncFiles\\Vault\\posts&#34; &#34;{base_dir}\\content\\posts&#34; /mir&#39;,
+    &#39;python imgs.py&#39;,
+    &#39;hugo server -t terminal&#39;
+]
+
+# Change to the project directory
+os.chdir(base_dir)
+
+# Execute commands in sequence
+for cmd in commands:
+    print(f&#34;Executing: {cmd}&#34;)
+    subprocess.run(cmd, shell=True)
+</code></pre><h2 id="git-and-github-actions">Git and Github actions<a href="#git-and-github-actions" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ul>
+<li>Now you need to autenticate your self at the github account. At ==cd ~/== find the ==.ssh== folder.</li>
+<li>If is not your first time you wil find some files here, like a ==id_rsa== like a private one and a ==id_rsa.pub== like a public one. The public is what we gona upload to git hub.</li>
+<li>If is your firts time use to generate some: ==bash
+ssh-keygen -t rsa -b 4096 -C &ldquo;<a href="mailto:your_email@example.com">your_email@example.com</a>&rdquo;==. The one thar you use to config this git.</li>
+<li>If you have more than one, use: ==cat [key.pub]== or open as a text to get it SHA copy.</li>
+<li>Go to you git hub accont. Create blank private repo. Go to Settings. Register new pair off keys.</li>
+<li>Test if you are in, from inside .ssh folder, use: ==ssh -T <a href="mailto:git@github.com">git@github.com</a>== and you should get a welcome mensage.</li>
+<li>Now, from you repo root, use ==git remote add origin <a href="mailto:git@github.com">git@github.com</a>:[your_username/repo_name.git]==.</li>
+<li>Use ==hugo== again.</li>
+<li>git add .</li>
+<li>git commit</li>
+<li>Only puplic folder is fot the host only. So thrn we need do take it to another branch. Use:</li>
+</ul>
+<pre tabindex="0"><code>git subtree split --prefix public -b hostinger-deploy
+git push origin hostinger-deploy:hostinger --force
+git branch -D hostinger-deploy
+</code></pre><ul>
+<li>And also put all inside a the big one:</li>
+</ul>
+<pre tabindex="0"><code>import os
+import re
+import shutil
+import subprocess
+from datetime import datetime
+
+# Paths
+base_dir = r&#34;my_blog_directory\my_data_science_blog&#34;
+posts_dir = r&#34;D:\GoogleDrive\DriveSyncFiles\Vault\posts&#34;
+attachments_dir = r&#34;D:\GoogleDrive\DriveSyncFiles\Vault\Attachments&#34;
+hugo_posts_dir = os.path.join(base_dir, &#34;content&#34;, &#34;posts&#34;)
+static_images_dir = os.path.join(base_dir, &#34;static&#34;, &#34;images&#34;)
+
+def process_images():
+    print(&#34;Processing images...&#34;)
+    # Create directories if they do not exist
+    for dir_path in [hugo_posts_dir, static_images_dir]:
+        if not os.path.exists(dir_path):
+            os.makedirs(dir_path)
+
+    # Process each markdown file
+    for filename in os.listdir(posts_dir):
+        if filename.endswith(&#34;.md&#34;):
+            # Read the original Obsidian file
+            source_path = os.path.join(posts_dir, filename)
+            with open(source_path, &#34;r&#34;, encoding=&#34;utf-8&#34;) as file:
+                content = file.read()
+            
+            # Find and process images
+            images = re.findall(r&#39;\[\[([^]]*\.png)\]\]&#39;, content)
+            
+            # Create a modified copy for Hugo
+            hugo_content = content
+            for image in images:
+                # Replace links in the Hugo version only
+                markdown_image = f&#34;![Image Description](/images/{image.replace(&#39; &#39;, &#39;%20&#39;)})&#34;
+                hugo_content = hugo_content.replace(f&#34;[[{image}]]&#34;, markdown_image)
+                
+                # Copy image to the Hugo static directory
+                image_source = os.path.join(attachments_dir, image)
+                if os.path.exists(image_source):
+                    shutil.copy(image_source, static_images_dir)
+            
+            # Save the modified version in the Hugo directory
+            hugo_path = os.path.join(hugo_posts_dir, filename)
+            with open(hugo_path, &#34;w&#34;, encoding=&#34;utf-8&#34;) as file:
+                file.write(hugo_content)
+    
+    print(&#34;Files processed and copied successfully!&#34;)
+    return True
+
+def execute_robocopy():
+    cmd = f&#39;robocopy &#34;{posts_dir}&#34; &#34;{hugo_posts_dir}&#34; /mir&#39;
+    print(f&#34;Executing: {cmd}&#34;)
+    result = subprocess.run(cmd, shell=True)
+    return result.returncode &lt;= 7
+
+def execute_command(cmd):
+    print(f&#34;Executing: {cmd}&#34;)
+    try:
+        subprocess.run(cmd, shell=True, check=True)
+        return True
+    except subprocess.CalledProcessError as e:
+        print(f&#34;Error executing {cmd}: {e}&#34;)
+        return False
+
+def git_commands():
+    current_time = datetime.now().strftime(&#34;%Y-%m-%d %H:%M:%S&#34;)
+    return [
+        &#39;git add .&#39;,
+        f&#39;git commit -m &#34;Blog updated at {current_time}&#34;&#39;,
+        &#39;git push origin master&#39;,
+        &#39;git subtree split --prefix public -b hostinger&#39;,
+        &#39;git push origin hostinger --force&#39;,
+        &#39;git branch -D hostinger&#39;
+    ]
+
+def main():
+    # Change to the project directory
+    os.chdir(base_dir)
+
+    # Execute robocopy
+    if not execute_robocopy():
+        print(&#34;Critical error in robocopy&#34;)
+        return False
+
+    # Process images
+    if not process_images():
+        print(&#34;Error processing images&#34;)
+        return False
+
+    # Generate the Hugo site
+    if not execute_command(&#39;hugo --cleanDestinationDir&#39;):
+        return False
+
+    # Execute git commands
+    for cmd in git_commands():
+        if not execute_command(cmd):
+            return False
+
+    print(&#34;Blog successfully updated!&#34;)
+    return True
+
+if __name__ == &#34;__main__&#34;:
+    main()
+</code></pre><ul>
+<li>Implement the repo manualy to someserver. Until make your self familiar to it. Then you can host it. Here i used a blank php one on hostinger.</li>
+</ul>
+<h2 id="host-it">Host it<a href="#host-it" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ul>
+<li>Enter your Git repository URL in the appropriate field, based on whether it is public or private. In this example, I used a public repository with the following URL format: ==https://github.com/my_git_user/my_repo.git==.</li>
+<li>Here, I opted for a Hostinger account. While it&rsquo;s not mandatory, I can confidently say it works smoothly and efficiently.</li>
+<li>Once you did, Implemet manualy by using the function in you host provider. If is working, find and click on the auto-implement button. A modal will appear, explanning a webhook URL(copy this one), and a link to configure it on you github account. Acces id and paste in the correspondenting field. Make no other chages and save it. It is done! It should work just fine as this one here is.</li>
+<li>You can also manage everything using the Python plugin! Configure it as demonstrated in the <a href="https://github.com/nickrallison/obsidian-python-scripter">Python Scripter</a>.</li>
+<li>Start blogging! =]</li>
+</ul>
+<h2 id="styling-your-blog-with-some-custom-styles">Styling Your Blog With some Custom Styles<a href="#styling-your-blog-with-some-custom-styles" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>To improve the visual appearance of your blog, especially for images, create a <code>layouts/partials/extended_head.html</code> file:</p>
+<pre tabindex="0"><code>&lt;style&gt;
+/* Global style for all images in posts and pages */
+.post-content img,
+.page-content img,
+.post img,
+.page img {
+    display: block;
+    margin: 2rem auto;
+    max-width: 100%;
+    height: auto;
+    width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Smooth hover effect */
+.post-content img:hover,
+.page-content img:hover,
+.post img:hover,
+.page img:hover {
+    transform: scale(1.02);
+}
+
+/* Adjustments for smaller images (such as logos) */
+.post-content img[alt*=&#34;logo&#34;],
+.page-content img[alt*=&#34;logo&#34;],
+.post img[alt*=&#34;logo&#34;],
+.page img[alt*=&#34;logo&#34;] {
+    width: 300px;
+    box-shadow: none;
+}
+
+/* Adjustments for profile images */
+.post-content img[alt*=&#34;profile&#34;],
+.page-content img[alt*=&#34;profile&#34;],
+.post img[alt*=&#34;profile&#34;],
+.page img[alt*=&#34;profile&#34;] {
+    width: 250px;
+    border-radius: 50%;
+    border: 3px solid #333;
+}
+&lt;/style&gt;
+</code></pre><p>Now, when refering to an image, just ==| logo or profile== input in the description for the style you want on it:</p>
+<pre tabindex="0"><code>&lt;!-- Now you can use the first word in the Vault image call to determinate the style! --&gt;
+
+&lt;!-- normal images in the blog --&gt;
+![Description](/images/image.png)
+&lt;!-- use it on vault --&gt;
+!![Image Description](/images/imagem.png)
+
+&lt;!-- for logo in the blog --&gt;
+![logo Description](/images/logo.png)
+&lt;!-- use it on vault --&gt;
+![[logo_imagem.png|logo]]
+
+&lt;!-- for profile images in the blog --&gt;
+![profile Description](/images/photo.jpg)
+&lt;!-- use it on vault --&gt;
+![[perfil.jpg|profile]]
+</code></pre><p>Select and use you favorite. Make sure to get ==[markup.goldmark.renderer] unsafe = true== on the hugo.toml file.</p>
+<h3 id="creating-an-about-page">Creating an About Page<a href="#creating-an-about-page" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Create a new file <code>content/about.md</code>:</p>
+<pre tabindex="0"><code>---
+
+title: &#34;About&#34;
+
+date: 2023-12-13
+
+draft: false
+
+---
+# About Me
+
+!(profile Description)[profile_photo.png]
+
+Hi! 
+
+&lt;!-- All other stuffs --&gt;
+</code></pre><h3 id="creating-an-projects-page">Creating an Projects Page<a href="#creating-an-projects-page" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<p>Create a new file <code>content/projects.md</code>:</p>
+<pre tabindex="0"><code>
+---
+
+title: &#34;Projects&#34;
+
+date: 2023-12-13
+
+draft: false
+
+---
+
+#  Projects
+
+&lt;!-- All other stuffs --&gt;
+</code></pre><h2 id="try-an-auto-run-update">Try an Auto run update<a href="#try-an-auto-run-update" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ul>
+<li>Install the Python scripter plugin.</li>
+<li>Put you update.py inside .obsidian/scripts/python folder and point you global python version on python version. And here is my contribuition to it:</li>
+</ul>
+<pre tabindex="0"><code>import os
+import re
+import shutil
+import subprocess
+from datetime import datetime
+import sys
+
+# Receive arguments from Obsidian
+python_script = sys.argv[0]  # script path
+vault_path = sys.argv[1]     # vault path
+file_path = sys.argv[2]      # file path
+
+# Paths
+base_dir = r&#34;D:\MyBlogDirectory\my_data_science_blog&#34;
+posts_dir = r&#34;D:\GoogleDrive\DriveSyncFiles\Vault\posts&#34;
+attachments_dir = r&#34;D:\GoogleDrive\DriveSyncFiles\Vault\Attachments&#34;
+hugo_posts_dir = os.path.join(base_dir, &#34;content&#34;, &#34;posts&#34;)
+static_images_dir = os.path.join(base_dir, &#34;static&#34;, &#34;images&#34;)
+
+def process_images():
+    print(&#34;Processing images...&#34;)
+    # Create directories if they do not exist
+    for dir_path in [hugo_posts_dir, static_images_dir]:
+        if not os.path.exists(dir_path):
+            os.makedirs(dir_path)
+
+    # Process each markdown file
+    for filename in os.listdir(posts_dir):
+        if filename.endswith(&#34;.md&#34;):
+            source_path = os.path.join(posts_dir, filename)
+            with open(source_path, &#34;r&#34;, encoding=&#34;utf-8&#34;) as file:
+                content = file.read()
+            
+            # Find and process images
+            pattern = r&#39;!\[\[([^]]*\.(png|jpg|jpeg|gif))(\|[^]]*?)?\]\]&#39;
+            images = re.findall(pattern, content)
+            
+            # Create a modified copy for Hugo
+            hugo_content = content
+            for image_path, ext, style in images:
+                # Determine style
+                if style and &#39;|logo&#39; in style:
+                    prefix = &#39;logo&#39;
+                elif style and &#39;|profile&#39; in style:
+                    prefix = &#39;profile&#39;
+                else:
+                    prefix = &#39;Image&#39;
+                
+                # Build the exact original pattern
+                original_pattern = f&#34;![[{image_path}{style}]]&#34;
+                markdown_image = f&#34;![{prefix} Description](/images/{image_path.replace(&#39; &#39;, &#39;%20&#39;)})&#34;
+                
+                # Replace in the Hugo content
+                hugo_content = hugo_content.replace(original_pattern, markdown_image)
+                
+                # Copy the image
+                image_source = os.path.join(attachments_dir, image_path)
+                if os.path.exists(image_source):
+                    shutil.copy(image_source, static_images_dir)
+            
+            # Save the processed file
+            hugo_path = os.path.join(hugo_posts_dir, filename)
+            with open(hugo_path, &#34;w&#34;, encoding=&#34;utf-8&#34;) as file:
+                file.write(hugo_content)
+    
+    return True
+
+def execute_command(cmd):
+    print(f&#34;Executing: {cmd}&#34;)
+    try:
+        subprocess.run(cmd, shell=True, check=True)
+        return True
+    except subprocess.CalledProcessError as e:
+        print(f&#34;Error executing {cmd}: {e}&#34;)
+        return False
+
+def git_commands():
+    current_time = datetime.now().strftime(&#34;%Y-%m-%d %H:%M:%S&#34;)
+    return [
+        &#39;git add .&#39;,
+        f&#39;git commit -m &#34;Blog updated at {current_time}&#34;&#39;,
+        &#39;git push origin master&#39;,
+        &#39;git subtree split --prefix public -b hostinger&#39;,
+        &#39;git push origin hostinger --force&#39;,
+        &#39;git branch -D hostinger&#39;
+    ]
+
+def main():
+    # Change to the project directory
+    os.chdir(base_dir)
+
+    # Process images (without robocopy)
+    if not process_images():
+        print(&#34;Error processing images&#34;)
+        return False
+
+    # Generate the Hugo site
+    if not execute_command(&#39;hugo --cleanDestinationDir&#39;):
+        return False
+
+    # Execute git commands
+    for cmd in git_commands():
+        if not execute_command(cmd):
+            return False
+
+    print(&#34;Blog successfully updated!&#34;)
+    return True
+
+if __name__ == &#34;__main__&#34;:
+    main()
+</code></pre><ul>
+<li>reload obsidian an now you can run it. If you have the scripter pluggin that i mentioned, from the Ctrl + P comands you can find it there.</li>
+</ul>
+<h2 id="common-issues">Common Issues<a href="#common-issues" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ul>
+<li><strong>Images not showing:</strong> Check image path and case sensitivity</li>
+<li><strong>Styles not applying:</strong> Verify extended_head.html location</li>
+<li><strong>Git errors:</strong> Check SSH key configuration</li>
+<li><strong>Hugo server errors:</strong> Verify Hugo version compatibility</li>
+<li><strong>Slowness in finishing:</strong> Consider re-running the Hugo process. After all, the content mirrors the Vault! Delete everything except your content. Fewer updates will make it as fast as before.</li>
+</ul>
+<h2 id="regular-tasks">Regular Tasks<a href="#regular-tasks" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ul>
+<li>Backup your Obsidian vault</li>
+<li>Update Hugo and theme versions</li>
+<li>Check Git repository size</li>
+<li>Monitor server logs</li>
+</ul>
+<h2 id="considerations">Considerations<a href="#considerations" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>It was verry fun and joyfull to see this blog being construct. I hope you to do it, so you can also spread your ideias and help others!</p>
+<h2 id="references">References<a href="#references" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p><a href="https://www.youtube.com/watch?v=dnE7c0ELEH8&amp;list=PLazumvohNo-2qvB49-9RL4karLMmqBDas&amp;index=18">I started a blog&hellip;..in 2024 (why you should too)</a></p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="//localhost:1313/posts/running-a-local-ai-to-interact-with-your-vault/" class="button inline prev">
+        &lt; [<span class="button__text">Running a Local AI to Interact with Your Vault</span>]
+      </a>
+    
+    
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

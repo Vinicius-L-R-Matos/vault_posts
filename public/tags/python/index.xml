@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Terminal</title>
+    <link>//localhost:1313/tags/python/</link>
+    <description>Recent content in Python on Terminal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 24 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Run a Powerful Offline AI Model from a USB Stick (Windows Guide)</title>
+      <link>//localhost:1313/posts/run-a-powerful-offline-ai-model-from-a-usb-stick-windows-guide/</link>
+      <pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/run-a-powerful-offline-ai-model-from-a-usb-stick-windows-guide/</guid>
+      <description>&lt;p&gt;What if you could carry the equivalent of &lt;strong&gt;127 million novels&lt;/strong&gt; or &lt;strong&gt;the entire Wikipedia 2,500 times over&lt;/strong&gt;&amp;hellip; in your pocket?&#xA;With the &lt;strong&gt;Dolphin-LLaMA3&lt;/strong&gt; model from Hugging Face (via Ollama), you can. This model fits on any &lt;strong&gt;128GB USB drive&lt;/strong&gt;, taking up just &lt;strong&gt;10GB&lt;/strong&gt; of space, and runs &lt;strong&gt;fully offline&lt;/strong&gt; — completely detached from Big Tech servers, censorship filters, or surveillance.&lt;/p&gt;&#xA;&lt;h1 id=&#34;contents&#34;&gt;Contents&lt;/h1&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;About the Model&lt;/li&gt;&#xA;&lt;li&gt;Routine Overview&lt;/li&gt;&#xA;&lt;li&gt;Initial Setup on Windows&lt;/li&gt;&#xA;&lt;li&gt;Running from a USB Drive&lt;/li&gt;&#xA;&lt;li&gt;Running AI from the USB&lt;/li&gt;&#xA;&lt;li&gt;Improve the Interface with AnythingLLM&lt;/li&gt;&#xA;&lt;li&gt;Interacting with Dolphin via Python (API)&lt;/li&gt;&#xA;&lt;li&gt;Final Thoughts&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-about-the-model&#34;&gt;🧠 About the Model&lt;/h2&gt;&#xA;&lt;p&gt;We’ll be using the &lt;strong&gt;Dolphin-LLaMA3&lt;/strong&gt; model, available directly through &lt;a href=&#34;https://ollama.com/library/dolphin-llama3&#34;&gt;Ollama&lt;/a&gt;. This 8-billion parameter LLaMA3-based model was trained on &lt;strong&gt;15 trillion tokens&lt;/strong&gt;, equivalent to about &lt;strong&gt;60 terabytes&lt;/strong&gt; of text.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>An Obsidian IDE for Python</title>
+      <link>//localhost:1313/posts/an-obsidian-ide-for-python/</link>
+      <pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/an-obsidian-ide-for-python/</guid>
+      <description>&lt;h2 id=&#34;you-did-what&#34;&gt;You did what?!&lt;/h2&gt;&#xA;&lt;p&gt;Let me explain: You write your notes in your Vault. Then, you run a command, and the code inside becomes a script and executes! And it does so with the environment of your choice already activated.&lt;/p&gt;&#xA;&lt;h2 id=&#34;oh-i-see-now-this-is-a-notebook&#34;&gt;Oh, I see now. This is a notebook!&lt;/h2&gt;&#xA;&lt;p&gt;No, it’s not. It transforms every code block—including comments—into an independent &lt;code&gt;script.py&lt;/code&gt; inside your &lt;code&gt;.obsidian\scripts\python&lt;/code&gt; folder. From there, you can grab it and start deploying or packaging it.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
