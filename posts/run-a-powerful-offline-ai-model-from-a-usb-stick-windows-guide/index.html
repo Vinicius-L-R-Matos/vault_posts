@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>Run a Powerful Offline AI Model from a USB Stick (Windows Guide) :: Terminal</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="What if you could carry the equivalent of 127 million novels or the entire Wikipedia 2,500 times over&hellip; in your pocket? With the Dolphin-LLaMA3 model from Hugging Face (via Ollama), you can. This model fits on any 128GB USB drive, taking up just 10GB of space, and runs fully offline — completely detached from Big Tech servers, censorship filters, or surveillance.
+Contents About the Model Routine Overview Initial Setup on Windows Running from a USB Drive Running AI from the USB Improve the Interface with AnythingLLM Interacting with Dolphin via Python (API) Final Thoughts 🧠 About the Model We’ll be using the Dolphin-LLaMA3 model, available directly through Ollama. This 8-billion parameter LLaMA3-based model was trained on 15 trillion tokens, equivalent to about 60 terabytes of text.
+" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="//localhost:1313/posts/run-a-powerful-offline-ai-model-from-a-usb-stick-windows-guide/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/code.min.4f0ccc8439f99bf7f7970298556b94011aabc1fcae743b6842fc3361a2da9ea3.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/main.min.15870410d15d02abd22fb5ef00996f65a00d04b3a7435e9f83831c7c2298de88.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="//localhost:1313/favicon.png">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Run a Powerful Offline AI Model from a USB Stick (Windows Guide)">
+<meta property="og:description" content="What if you could carry the equivalent of 127 million novels or the entire Wikipedia 2,500 times over&hellip; in your pocket? With the Dolphin-LLaMA3 model from Hugging Face (via Ollama), you can. This model fits on any 128GB USB drive, taking up just 10GB of space, and runs fully offline — completely detached from Big Tech servers, censorship filters, or surveillance.
+Contents About the Model Routine Overview Initial Setup on Windows Running from a USB Drive Running AI from the USB Improve the Interface with AnythingLLM Interacting with Dolphin via Python (API) Final Thoughts 🧠 About the Model We’ll be using the Dolphin-LLaMA3 model, available directly through Ollama. This 8-billion parameter LLaMA3-based model was trained on 15 trillion tokens, equivalent to about 60 terabytes of text.
+" />
+<meta property="og:url" content="//localhost:1313/posts/run-a-powerful-offline-ai-model-from-a-usb-stick-windows-guide/" />
+<meta property="og:site_name" content="Terminal" />
+
+  <meta property="og:image" content="//localhost:1313/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+  <meta property="article:section" content="SecOps" />
+
+
+  <meta property="article:published_time" content="2025-03-24 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Terminal
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/about" >About</a></li>
+        
+      
+        
+          <li><a href="/showcase" >Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="//localhost:1313/posts/run-a-powerful-offline-ai-model-from-a-usb-stick-windows-guide/">Run a Powerful Offline AI Model from a USB Stick (Windows Guide)</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2025-03-24</time></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="//localhost:1313/tags/python/">python</a>&nbsp;
+      
+      #<a href="//localhost:1313/tags/pendrive/">Pendrive</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>What if you could carry the equivalent of <strong>127 million novels</strong> or <strong>the entire Wikipedia 2,500 times over</strong>&hellip; in your pocket?
+With the <strong>Dolphin-LLaMA3</strong> model from Hugging Face (via Ollama), you can. This model fits on any <strong>128GB USB drive</strong>, taking up just <strong>10GB</strong> of space, and runs <strong>fully offline</strong> — completely detached from Big Tech servers, censorship filters, or surveillance.</p>
+<h1 id="contents">Contents<a href="#contents" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<ul>
+<li>About the Model</li>
+<li>Routine Overview</li>
+<li>Initial Setup on Windows</li>
+<li>Running from a USB Drive</li>
+<li>Running AI from the USB</li>
+<li>Improve the Interface with AnythingLLM</li>
+<li>Interacting with Dolphin via Python (API)</li>
+<li>Final Thoughts</li>
+</ul>
+<hr>
+<h2 id="-about-the-model">🧠 About the Model<a href="#-about-the-model" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>We’ll be using the <strong>Dolphin-LLaMA3</strong> model, available directly through <a href="https://ollama.com/library/dolphin-llama3">Ollama</a>. This 8-billion parameter LLaMA3-based model was trained on <strong>15 trillion tokens</strong>, equivalent to about <strong>60 terabytes</strong> of text.</p>
+<p>Why Dolphin?</p>
+<ul>
+<li>Runs offline</li>
+<li>Lightweight (~10GB)</li>
+<li>Low censorship — it responds to sensitive or controversial prompts without guardrails</li>
+<li>Great for advanced developers, researchers, and tinkerers</li>
+</ul>
+<p>⚠️ <strong>Disclaimer</strong>: Because of its uncensored nature, this model might respond to sensitive or dangerous queries. Use responsibly.</p>
+<p>!<img src="/images/dolphin_joke.png" alt="Image Description"></p>
+<hr>
+<h2 id="-routine-overview">🛠️ Routine Overview<a href="#-routine-overview" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Here&rsquo;s what we&rsquo;ll do:</p>
+<ol>
+<li>Download and install Ollama + Dolphin-LLaMA3</li>
+<li>Run it offline from your PC</li>
+<li>Move everything to a USB drive for portable offline AI</li>
+<li>Improve the interface with AnythingLLM</li>
+<li>Interact via a simple Python API</li>
+</ol>
+<hr>
+<h2 id="-initial-setup-on-windows">🔧 Initial Setup on Windows<a href="#-initial-setup-on-windows" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ol>
+<li><strong>Download and install Ollama</strong>:<br>
+➡️ <a href="https://ollama.com/download/windows">ollama.com/download/windows</a>
+(Make sure to close any Ollama&rsquo;s task before this point on. The installer usually start a server on the background)</li>
+<li><strong>Open two PowerShell terminals as Administrator</strong></li>
+<li>In the <strong>first terminal</strong>, run:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-batch" data-lang="batch"><span class="line"><span class="cl">ollama serve
+</span></span></code></pre></div></li>
+<li>In the <strong>second terminal</strong>, install and run the model:
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-batch" data-lang="batch"><span class="line"><span class="cl">ollama run dolphin-llama3
+</span></span></code></pre></div></li>
+<li>Wait for the model to download. Once complete, stop the process with:
+<pre tabindex="0"><code>Ctrl+C then Ctrl+D
+</code></pre></li>
+<li><strong>Close both terminals</strong> and reopen two <strong>PowerShell terminals (non-admin)</strong>. Run:
+Terminal 1:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-batch" data-lang="batch"><span class="line"><span class="cl">ollama serve
+</span></span></code></pre></div><p>And for Teminal 2:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-batch" data-lang="batch"><span class="line"><span class="cl">ollama run dolphin-llama3
+</span></span></code></pre></div><p>Now you’re running Dolphin-LLaMA3 offline!</p>
+<p>Test with a prompt like:</p>
+<blockquote>
+<p>&ldquo;What is the best way to steal a car?&rdquo;</p></blockquote>
+<p>And it should respond some like this:</p>
+<blockquote>
+<p>&ldquo;I&rsquo;m not able to assist you with illegal activities. However, I can tell you that the most common method of stealing a car is by&hellip;&rdquo;</p></blockquote>
+<p>Is a tipical censored kind of anwser. It will be improved since we gona run it in a pendrive.</p>
+<hr>
+<h2 id="-running-from-a-usb-drive">💾 Running from a USB Drive<a href="#-running-from-a-usb-drive" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ol>
+<li><strong>Locate your Ollama model folder</strong><br>
+Look for <code>Ollama</code> or <code>.ollama</code> in your user directory (e.g., <code>C:\Users\YourName</code>)</li>
+<li><strong>Format your USB drive</strong> to <strong>NTFS</strong> (right-click &gt; Format &gt; File System: NTFS)</li>
+<li><strong>Copy the Ollama folder</strong> to the root of your USB stick (e.g., <code>E:\Ollama</code>)</li>
+<li><strong>Find Ollama’s binary</strong> using PowerShell:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">Get-Command</span> <span class="n">ollama</span>
+</span></span></code></pre></div><p>Then copy the contents of that <code>...Local\Programs\Ollama</code> folder into the pendrive&rsquo;s <code>E:\Ollama</code> as well. Here it should have 8 files (lib, app, ollama app, ollama, ollama_welcome, unins000.dat, unins000, unins000). It all go together, inside de pendrive&rsquo;s root.
+5. <strong>Optional cleanup:</strong> You can now uninstall Ollama from your PC and delete the local model folders — everything is on the USB.</p>
+<hr>
+<h2 id="-running-ai-from-the-usb">🚀 Running AI from the USB<a href="#-running-ai-from-the-usb" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ol>
+<li><strong>Plug in your USB stick</strong></li>
+<li><strong>Open two PowerShell terminals (non-admin)</strong></li>
+<li>In the <strong>first terminal</strong>:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">cd </span><span class="n">E:</span><span class="p">\</span>
+</span></span><span class="line"><span class="cl"><span class="nv">$env:OLLAMA_MODELS</span><span class="p">=</span><span class="s2">&#34;E:\ollama\models&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">ollama</span> <span class="n">serve</span>
+</span></span></code></pre></div><ol start="4">
+<li>In the <strong>second terminal</strong>:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">cd </span><span class="n">E:</span><span class="p">\</span>
+</span></span><span class="line"><span class="cl"><span class="nb">cd </span><span class="n">ollama</span>
+</span></span><span class="line"><span class="cl"><span class="n">ollama</span><span class="p">.</span><span class="py">exe</span> <span class="n">run</span> <span class="nb">dolphin-llama3</span>
+</span></span></code></pre></div><p>Then, notice its uncensored kind of answer to the same question:</p>
+<blockquote>
+<p>&ldquo;I&rsquo;d be happy to help you with that! First, you&rsquo;ll need to identify &hellip;&rdquo;</p></blockquote>
+<p>If it responds uncensored, you&rsquo;re doing good. If not, restart the process and kill any leftover Ollama processes in Task Manager.</p>
+<hr>
+<h2 id="-improve-the-interface-with-anythingllm">🪟 Improve the Interface with AnythingLLM<a href="#-improve-the-interface-with-anythingllm" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ol>
+<li>Run the <strong>Ollama server</strong> as explained above.</li>
+<li>Go to <a href="https://anythingllm.com/">anythingllm.com</a> and download the Windows app.</li>
+<li>Install it to <code>E:\AnythingLLM</code>. Open a <code>Ollama serve</code> from the pendrive. It will be possible to execute the interface from this point on. Then we need to create 3 files:</li>
+<li>Create a <code>.env</code> file inside <code>E:\AnythingLLM</code> with this content:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-batch" data-lang="batch"><span class="line"><span class="cl">OLLAMA_HOST=http://127.0.0.1:11434
+</span></span><span class="line"><span class="cl">LLM_PROVIDER=ollama
+</span></span><span class="line"><span class="cl">MODEL_BACKEND=dolphin-llama3
+</span></span><span class="line"><span class="cl">OLLAMA_MODEL_PATH=<span class="nv">%DRIVE_LETTER%</span>\Ollama\models
+</span></span></code></pre></div><ol start="5">
+<li>To automate the startup, create two files in your USB root:</li>
+</ol>
+<ul>
+<li><code>autorun.inf</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-batch" data-lang="batch"><span class="line"><span class="cl">[Autorun]
+</span></span><span class="line"><span class="cl">label=Dolphin LLM
+</span></span><span class="line"><span class="cl">shellexecute=start.bat
+</span></span><span class="line"><span class="cl">icon=customicon.ico
+</span></span><span class="line"><span class="cl">action=Start local Dolphin LLM
+</span></span></code></pre></div><ul>
+<li><code>start.bat</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-batch" data-lang="batch"><span class="line"><span class="cl"><span class="p">@</span><span class="k">echo</span> off
+</span></span><span class="line"><span class="cl"><span class="k">set</span> <span class="nv">DRIVE_LETTER</span><span class="p">=</span><span class="nv">%~d0</span>
+</span></span><span class="line"><span class="cl"><span class="k">set</span> <span class="nv">OLLAMA_MODELS</span><span class="p">=</span><span class="nv">%DRIVE_LETTER%</span>\Ollama\models
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">echo</span> Verificando arquivos necessarios...
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="k">not</span> <span class="k">exist</span> <span class="s2">&#34;</span><span class="nv">%DRIVE_LETTER%</span><span class="s2">\ollama.exe&#34;</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="k">echo</span> ERRO: Arquivo ollama.exe nao encontrado em <span class="nv">%DRIVE_LETTER%</span>\
+</span></span><span class="line"><span class="cl">    <span class="k">pause</span>
+</span></span><span class="line"><span class="cl">    <span class="k">exit</span> /b 1
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">echo</span> Starting Ollama...
+</span></span><span class="line"><span class="cl"><span class="k">start</span> <span class="s2">&#34;&#34;</span> <span class="s2">&#34;</span><span class="nv">%DRIVE_LETTER%</span><span class="s2">\ollama.exe&#34;</span> serve
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">:</span><span class="nl">waitloop</span>
+</span></span><span class="line"><span class="cl">netstat -an <span class="p">|</span> find <span class="s2">&#34;LISTENING&#34;</span> <span class="p">|</span> find <span class="s2">&#34;:11434&#34;</span> <span class="p">&gt;</span>nul <span class="mi">2</span><span class="p">&gt;&amp;</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="k">errorlevel</span> <span class="mi">1</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    timeout /t 1 /nobreak <span class="p">&gt;</span>nul
+</span></span><span class="line"><span class="cl">    <span class="k">goto</span> <span class="nl">waitloop</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">echo</span> Starting AnythingLLM...
+</span></span><span class="line"><span class="cl"><span class="k">start</span> <span class="s2">&#34;&#34;</span> <span class="s2">&#34;</span><span class="nv">%DRIVE_LETTER%</span><span class="s2">\anythingllm\AnythingLLM.exe&#34;</span>
+</span></span></code></pre></div><p>Now, Dolphin + AnythingLLM launches just by running <code>start.bat</code>, direct from the pendrive!!! It will open the server and the client together.</p>
+<hr>
+<h2 id="-interacting-with-dolphin-via-python-api">🧪 Interacting with Dolphin via Python (API)<a href="#-interacting-with-dolphin-via-python-api" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Now is time to interact by some API. Depending of the base url you chose to conect, it will open to the Ollama port (More quick), or the AnythingLLM (More plastic).
+Bellow we try on the more quick way.</p>
+<h3 id="method-1-using-ollama-python-official-library">Method 1: Using <code>ollama-python</code> (official library)<a href="#method-1-using-ollama-python-official-library" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">ollama</span> <span class="kn">import</span> <span class="n">Client</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;http://localhost:11434&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">chat_with_dolphin</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s1">&#39;dolphin-llama3&#39;</span><span class="p">,</span> <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="s1">&#39;role&#39;</span><span class="p">:</span> <span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="n">prompt</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">response</span><span class="p">[</span><span class="s1">&#39;message&#39;</span><span class="p">][</span><span class="s1">&#39;content&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">chat_with_dolphin</span><span class="p">(</span><span class="s2">&#34;What is the capital of Brazil?&#34;</span><span class="p">))</span>
+</span></span></code></pre></div><h3 id="method-2-using-requests">Method 2: Using <code>requests</code><a href="#method-2-using-requests" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">send_prompt</span><span class="p">(</span><span class="n">prompt</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;http://localhost:11434/api/chat&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;dolphin-llama3&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;messages&#34;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;user&#34;</span><span class="p">,</span> <span class="s2">&#34;content&#34;</span><span class="p">:</span> <span class="n">prompt</span><span class="p">}]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;message&#39;</span><span class="p">][</span><span class="s1">&#39;content&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">send_prompt</span><span class="p">(</span><span class="s2">&#34;Who discovered Brazil?&#34;</span><span class="p">))</span>
+</span></span></code></pre></div><h3 id="method-3-simple-interactive-terminal-chat">Method 3: Simple interactive terminal chat<a href="#method-3-simple-interactive-terminal-chat" class="hanchor" ariaLabel="Anchor">#</a> </h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">chat</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">history</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">user_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&#34;You: &#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">user_input</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&#34;exit&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">break</span>
+</span></span><span class="line"><span class="cl">        <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;model&#34;</span><span class="p">:</span> <span class="s2">&#34;dolphin-llama3&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;messages&#34;</span><span class="p">:</span> <span class="n">history</span> <span class="o">+</span> <span class="p">[{</span><span class="s2">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;user&#34;</span><span class="p">,</span> <span class="s2">&#34;content&#34;</span><span class="p">:</span> <span class="n">user_input</span><span class="p">}]</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&#34;http://localhost:11434/api/chat&#34;</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">reply</span> <span class="o">=</span> <span class="n">res</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;message&#39;</span><span class="p">][</span><span class="s1">&#39;content&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Dolphin:&#34;</span><span class="p">,</span> <span class="n">reply</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">history</span><span class="o">.</span><span class="n">extend</span><span class="p">([{</span><span class="s2">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;user&#34;</span><span class="p">,</span> <span class="s2">&#34;content&#34;</span><span class="p">:</span> <span class="n">user_input</span><span class="p">},</span> <span class="p">{</span><span class="s2">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;assistant&#34;</span><span class="p">,</span> <span class="s2">&#34;content&#34;</span><span class="p">:</span> <span class="n">reply</span><span class="p">}])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">chat</span><span class="p">()</span>
+</span></span></code></pre></div><h4 id="-dependencies">🐍 Dependencies:<a href="#-dependencies" class="hanchor" ariaLabel="Anchor">#</a> </h4>
+<p>To use the official API install on the venv:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip install requests ollama-python
+</span></span></code></pre></div><hr>
+<h2 id="-final-thoughts">🎯 Final Thoughts<a href="#-final-thoughts" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ul>
+<li>This is the final directories organization:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-batch" data-lang="batch"><span class="line"><span class="cl">USB_DRIVE:\
+</span></span><span class="line"><span class="cl">├── ollama.exe
+</span></span><span class="line"><span class="cl">├── models\
+</span></span><span class="line"><span class="cl">├── anythingllm\
+</span></span><span class="line"><span class="cl">│   ├── AnythingLLM.exe
+</span></span><span class="line"><span class="cl">│   └── .env
+</span></span><span class="line"><span class="cl">├── start.bat
+</span></span><span class="line"><span class="cl">├── autorun.inf
+</span></span><span class="line"><span class="cl">└── customicon.ico
+</span></span></code></pre></div><ul>
+<li>It need 15,2 GB in total to work.</li>
+<li>You now have a <strong>fully functional AI assistant</strong>, running completely offline, stored on a <strong>portable USB stick</strong>, with a clean GUI and API interaction — free from corporate filters.</li>
+<li>You can also provide some nice image to work in the <code>customicon.ico</code>.</li>
+<li>I use an 16RAM, i7, 2CPU in a 123G pendrive.</li>
+<li>One day for download, test and build it all.</li>
+<li>Took lass then 4 min to get response.</li>
+<li>Suports RAG, scrapping, queries and others cool stufs. Uncensored.</li>
+</ul>
+<p>Let your creativity run wild, build private research tools, assistants, bots, or integrate Dolphin into custom workflows. Like Agentic-workflows, MCP, AAAS, or any else that is to come.</p>
+<p>If this helped you, feel free to share or fork it for your own use. The future no one knows. Stay private, stay powerful. 🚀</p>
+<hr>
+<h2 id="references">References<a href="#references" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=eiMSapoeyaU&amp;t=483s">Global Science Networh</a>, on the &ldquo;Como executar LLMs privados e sem censura offline | Dolphin Llama 3&rdquo; title. Worked a lot for me and i could increment on the API section.</li>
+</ul>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+    
+    
+      <a href="//localhost:1313/posts/an-obsidian-ide-for-python/" class="button inline next">
+         [<span class="button__text">An Obsidian IDE for Python</span>] &gt;
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2025 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>

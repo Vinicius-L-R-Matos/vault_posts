@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Terminal</title>
+    <link>//localhost:1313/tags/</link>
+    <description>Recent content in Tags on Terminal</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 24 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pendrive</title>
+      <link>//localhost:1313/tags/pendrive/</link>
+      <pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/pendrive/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>//localhost:1313/tags/python/</link>
+      <pubDate>Mon, 24 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>How</title>
+      <link>//localhost:1313/tags/how/</link>
+      <pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/how/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Obsidian</title>
+      <link>//localhost:1313/tags/obsidian/</link>
+      <pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/obsidian/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>To</title>
+      <link>//localhost:1313/tags/to/</link>
+      <pubDate>Tue, 25 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/to/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI</title>
+      <link>//localhost:1313/tags/ai/</link>
+      <pubDate>Wed, 20 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>How_to</title>
+      <link>//localhost:1313/tags/how_to/</link>
+      <pubDate>Wed, 20 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/how_to/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Blog</title>
+      <link>//localhost:1313/tags/blog/</link>
+      <pubDate>Wed, 13 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/tags/blog/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
