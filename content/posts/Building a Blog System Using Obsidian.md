@@ -84,7 +84,7 @@ git submodule add -f https://github.com/panr/hugo-theme-terminal.git themes/term
 - Back to the site's root and use ==hugo server== for your eyes only. =]. Inside ==public/post== are the html versions of  Obsidian's Markdown files.
 - Go to the Obsidian's source mode on your note. Lets take some FrontMater | Metadata | Proprieties to it. Insert between --- and --- the title, date, draft(false) and some tags(this onde on -|bullets). If you like to, You can have some templater on and so... Use robocopy inside contents & hugo server inside root to see the efects!
 
-## Do some Images Attachments
+## Do some Images Attachments!
 - In your Vault, create a dedicated folder named `Attachments` for storing all your blog images.
 - Now i will put an totally perfect and precise image in this note. 
 	!![Image Description](/images/smile.png)
@@ -191,7 +191,7 @@ for cmd in commands:
 - Now you need to autenticate your self at the github account. At ==cd ~/== find the ==.ssh== folder.  
 - If is not your first time you wil find some files here, like a ==id_rsa== like a private one and a ==id_rsa.pub== like a public one. The public is what we gona upload to git hub.
 - If is your firts time use to generate some: ==bash
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"==. The one thar you use to config this git. 
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"==. The one that you use to config this git. 
 - If you have more than one, use: ==cat [key.pub]== or open as a text to get it SHA copy.
 - Go to you git hub accont. Create blank private repo. Go to Settings. Register new pair off keys.
 - Test if you are in, from inside .ssh folder, use: ==ssh -T git@github.com== and you should get a welcome mensage. 
@@ -199,14 +199,14 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"==. The one thar you use to
 - Use ==hugo== again.
 - git add .
 - git commit
-- Only puplic folder is fot the host only. So thrn we need do take it to another branch. Use: 
+- Only puplic folder is fot the host only. So then we need do take it to another branch. Use: 
 ```
 git subtree split --prefix public -b hostinger-deploy
 git push origin hostinger-deploy:hostinger --force
 git branch -D hostinger-deploy
 ```
 
-- And also put all inside a the big one:
+- And also, again, put all inside a the big one script:
 ```
 import os
 import re

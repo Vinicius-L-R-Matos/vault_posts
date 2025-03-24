@@ -259,7 +259,7 @@ git submodule add -f https://github.com/panr/hugo-theme-terminal.git themes/term
 <li>Back to the site&rsquo;s root and use ==hugo server== for your eyes only. =]. Inside ==public/post== are the html versions of  Obsidian&rsquo;s Markdown files.</li>
 <li>Go to the Obsidian&rsquo;s source mode on your note. Lets take some FrontMater | Metadata | Proprieties to it. Insert between &mdash; and &mdash; the title, date, draft(false) and some tags(this onde on -|bullets). If you like to, You can have some templater on and so&hellip; Use robocopy inside contents &amp; hugo server inside root to see the efects!</li>
 </ul>
-<h2 id="do-some-images-attachments">Do some Images Attachments<a href="#do-some-images-attachments" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<h2 id="do-some-images-attachments">Do some Images Attachments!<a href="#do-some-images-attachments" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <ul>
 <li>In your Vault, create a dedicated folder named <code>Attachments</code> for storing all your blog images.</li>
 <li>Now i will put an totally perfect and precise image in this note.
@@ -366,7 +366,7 @@ for cmd in commands:
 <li>Now you need to autenticate your self at the github account. At ==cd ~/== find the ==.ssh== folder.</li>
 <li>If is not your first time you wil find some files here, like a ==id_rsa== like a private one and a ==id_rsa.pub== like a public one. The public is what we gona upload to git hub.</li>
 <li>If is your firts time use to generate some: ==bash
-ssh-keygen -t rsa -b 4096 -C &ldquo;<a href="mailto:your_email@example.com">your_email@example.com</a>&rdquo;==. The one thar you use to config this git.</li>
+ssh-keygen -t rsa -b 4096 -C &ldquo;<a href="mailto:your_email@example.com">your_email@example.com</a>&rdquo;==. The one that you use to config this git.</li>
 <li>If you have more than one, use: ==cat [key.pub]== or open as a text to get it SHA copy.</li>
 <li>Go to you git hub accont. Create blank private repo. Go to Settings. Register new pair off keys.</li>
 <li>Test if you are in, from inside .ssh folder, use: ==ssh -T <a href="mailto:git@github.com">git@github.com</a>== and you should get a welcome mensage.</li>
@@ -374,13 +374,13 @@ ssh-keygen -t rsa -b 4096 -C &ldquo;<a href="mailto:your_email@example.com">your
 <li>Use ==hugo== again.</li>
 <li>git add .</li>
 <li>git commit</li>
-<li>Only puplic folder is fot the host only. So thrn we need do take it to another branch. Use:</li>
+<li>Only puplic folder is fot the host only. So then we need do take it to another branch. Use:</li>
 </ul>
 <pre tabindex="0"><code>git subtree split --prefix public -b hostinger-deploy
 git push origin hostinger-deploy:hostinger --force
 git branch -D hostinger-deploy
 </code></pre><ul>
-<li>And also put all inside a the big one:</li>
+<li>And also, again, put all inside a the big one script:</li>
 </ul>
 <pre tabindex="0"><code>import os
 import re
