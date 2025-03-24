@@ -2,58 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/categories/</loc>
+    <loc>/categories/</loc>
     <lastmod>2025-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/pendrive/</loc>
+    <loc>/tags/pendrive/</loc>
     <lastmod>2025-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/</loc>
+    <loc>/posts/</loc>
     <lastmod>2025-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/python/</loc>
+    <loc>/tags/python/</loc>
     <lastmod>2025-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/run-a-powerful-offline-ai-model-from-a-usb-stick-windows-guide/</loc>
+    <loc>/posts/run-a-powerful-offline-ai-model-from-a-usb-stick-windows-guide/</loc>
     <lastmod>2025-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/categories/secops/</loc>
+    <loc>/categories/secops/</loc>
     <lastmod>2025-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2025-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/</loc>
+    <loc>/</loc>
     <lastmod>2025-03-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/an-obsidian-ide-for-python/</loc>
+    <loc>/posts/an-obsidian-ide-for-python/</loc>
     <lastmod>2025-02-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/how/</loc>
+    <loc>/tags/how/</loc>
     <lastmod>2025-02-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/obsidian/</loc>
+    <loc>/tags/obsidian/</loc>
     <lastmod>2025-02-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/to/</loc>
+    <loc>/tags/to/</loc>
     <lastmod>2025-02-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/categories/tutorials/</loc>
+    <loc>/categories/tutorials/</loc>
     <lastmod>2025-02-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/ai/</loc>
+    <loc>/tags/ai/</loc>
     <lastmod>2023-12-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/how_to/</loc>
+    <loc>/tags/how_to/</loc>
     <lastmod>2023-12-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/running-a-local-ai-to-interact-with-your-vault/</loc>
+    <loc>/posts/running-a-local-ai-to-interact-with-your-vault/</loc>
     <lastmod>2023-12-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/blog/</loc>
+    <loc>/tags/blog/</loc>
     <lastmod>2023-12-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/building-a-blog-system-using-obsidian/</loc>
+    <loc>/posts/building-a-blog-system-using-obsidian/</loc>
     <lastmod>2023-12-13T00:00:00+00:00</lastmod>
   </url>
 </urlset>
