@@ -106,8 +106,49 @@ What’s happening here is that an Obsidian vault is feeding the content of the 
 
 
 
+<style>
+ 
+.post-content img,
+.page-content img,
+.post img,
+.page img {
+    display: block;
+    margin: 2rem auto;
+    max-width: 100%;
+    height: auto;
+    width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
 
+ 
+.post-content img:hover,
+.page-content img:hover,
+.post img:hover,
+.page img:hover {
+    transform: scale(1.02);
+}
 
+ 
+.post-content img[alt*="logo"],
+.page-content img[alt*="logo"],
+.post img[alt*="logo"],
+.page img[alt*="logo"] {
+    width: 300px;
+    box-shadow: none;
+}
+
+ 
+.post-content img[alt*="profile"],
+.page-content img[alt*="profile"],
+.post img[alt*="profile"],
+.page img[alt*="profile"] {
+    width: 250px;
+    border-radius: 50%;
+    border: 3px solid #333;
+}
+</style>
 
 </head>
 <body>
@@ -204,13 +245,13 @@ What’s happening here is that an Obsidian vault is feeding the content of the 
 <p>With its official discontinuation in 2022 and migration to <a href="https://quarto.org/">Quarto</a>, I lost the familiar framework I had used to convert my Markdown files into posts. However, my experience transitioning to Obsidian for this purpose has been exceptional, and I’m eager to share what I’ve learned.</p>
 <h2 id="why-do-this-at-all">Why do this at all?<a href="#why-do-this-at-all" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>The CEO of <a href="https://www.anthropic.com/">Anthropic</a>—a startup founded by former OpenAI members—<a href="https://danielmiessler.com/">Daniel Miessler</a> has shared insightful perspectives on AI, the future, and the transformative impact these technologies may have on our lives. One idea, in particular, resonates strongly with me:<br>
-!<img src="/images/daniel_miessler_x_post.png" alt="Image Description"></p>
+<img src="/images/daniel_miessler_x_post.png" alt="Image Description"></p>
 <p>From my understanding, as AI becomes more decentralized, it will enable people across the globe to share ideas and create goods more efficiently. Regardless of whether AI is currently hyped in the tech market, the benefits of fostering open dialogue to improve the global economy are undeniable.</p>
 <p>This idea inspired me to explore the possibility of using a Zettelkasten-like note system to organize thoughts and create an application that directly pulls from a vault to effortlessly generate blog posts. Such a system would be both powerful and productive.</p>
 <p>Like many great discoveries in history, it all begins with just a few words&hellip;</p>
 <h2 id="how-it-works">How it works<a href="#how-it-works" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p>The following chart demonstrates how it’s done:
-!<img src="/images/blog_system.png" alt="Image Description">
+<img src="/images/blog_system.png" alt="Image Description">
 Putting it into a few words, it is expected that:</p>
 <ul>
 <li>A post folder is provided.</li>
@@ -263,7 +304,7 @@ git submodule add -f https://github.com/panr/hugo-theme-terminal.git themes/term
 <ul>
 <li>In your Vault, create a dedicated folder named <code>Attachments</code> for storing all your blog images.</li>
 <li>Now i will put an totally perfect and precise image in this note.
-!<img src="/images/smile.png" alt="Image Description">
+<img src="/images/smile.png" alt="Image Description">
 If just do so, it wil be not consider like one to hugo. It need some temper. Spycy! =]</li>
 <li>Paste this script in a imgs.py file on the root of your site. Remember to replace the directories variables (I made some alterations, becose when i did use the Chuck&rsquo;s one, it modifies the original path):</li>
 </ul>
@@ -492,8 +533,8 @@ if __name__ == &#34;__main__&#34;:
 </ul>
 <h2 id="host-it">Host it<a href="#host-it" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <ul>
-<li>Enter your Git repository URL in the appropriate field, based on whether it is public or private. In this example, I used a public repository with the following URL format: ==https://github.com/my_git_user/my_repo.git==.</li>
-<li>Here, I opted for a Hostinger account. While it&rsquo;s not mandatory, I can confidently say it works smoothly and efficiently.</li>
+<li>Enter your Git repository URL in the appropriate field of your provider account, based on whether it is public or private. In this example, I used a public repository with the following URL format: ==https://github.com/my_git_user/my_repo.git==.</li>
+<li>Here, I opted for a Hostinger account and branch name. While it&rsquo;s not mandatory, I can confidently say it works smoothly and efficiently.</li>
 <li>Once you did, Implemet manualy by using the function in you host provider. If is working, find and click on the auto-implement button. A modal will appear, explanning a webhook URL(copy this one), and a link to configure it on you github account. Acces id and paste in the correspondenting field. Make no other chages and save it. It is done! It should work just fine as this one here is.</li>
 <li>You can also manage everything using the Python plugin! Configure it as demonstrated in the <a href="https://github.com/nickrallison/obsidian-python-scripter">Python Scripter</a>.</li>
 <li>Start blogging! =]</li>
@@ -549,17 +590,17 @@ if __name__ == &#34;__main__&#34;:
 &lt;!-- normal images in the blog --&gt;
 ![Description](/images/image.png)
 &lt;!-- use it on vault --&gt;
-!![Image Description](/images/imagem.png)
+![Image Description](/images/imagem.png)
 
 &lt;!-- for logo in the blog --&gt;
 ![logo Description](/images/logo.png)
 &lt;!-- use it on vault --&gt;
-![[logo_imagem.png|logo]]
+![logo Description](/images/logo_imagem.png)
 
 &lt;!-- for profile images in the blog --&gt;
 ![profile Description](/images/photo.jpg)
 &lt;!-- use it on vault --&gt;
-![[perfil.jpg|profile]]
+![profile Description](/images/perfil.jpg)
 </code></pre><p>Select and use you favorite. Make sure to get ==[markup.goldmark.renderer] unsafe = true== on the hugo.toml file.</p>
 <h3 id="creating-an-about-page">Creating an About Page<a href="#creating-an-about-page" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>Create a new file <code>content/about.md</code>:</p>
