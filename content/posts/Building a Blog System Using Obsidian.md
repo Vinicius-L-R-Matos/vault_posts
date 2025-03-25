@@ -11,8 +11,7 @@ categories:
 series:
   - getting-started
 ---
-
-## From: Vault's folder. To: Blog's feed 
+From: Vault's folder. To: Blog's feed 
 This is my personal blogging pipeline, inspired by the content creator [NetWorkChuck](https://www.youtube.com/watch?v=dnE7c0ELEH8&list=PLazumvohNo-2qvB49-9RL4karLMmqBDas&index=18). I hope this guide helps you express your ideas more effectively and share them with the world.
 
 If you enjoy maintaining control over your publications and having some code-based automation fun, this approach should serve you well!
@@ -55,8 +54,8 @@ The following are needed and will be explained—along with their downloads, ins
 - Hugo.
 - Host site.
 - Here, I used Windows as the operating system. Feel free to adapt the steps for others.
-
 ## The Setup
+Thouse are all you need to prepare:
 - [Download](https://obsidian.md/download) and install Obsidian.
 - In your preferred Vault, create a folder named ==posts==. This folder will house all your blog content.
 - Make your "**Go**" acessible. If havent installed, [download](https://go.dev/dl/) and install. It is necessary to make the Hugo work.
@@ -71,20 +70,35 @@ The following are needed and will be explained—along with their downloads, ins
 - Navigate to the directory where you want to store your site files from the CMD. Then, use the following command in your terminal: ==hugo new site [your_site_name]===.
 - Inicialize hit repository in the roo of the site projetc, add name and email configs, and find your the theme. Here i chise the terminal:
 ```
-  
 git init
 git config --global user.name "Your Name"
 git config --global user.email "your.email@example.com" 
 #Find a theme ---> https://themes.gohugo.io/ and clone it:
 git submodule add -f https://github.com/panr/hugo-theme-terminal.git themes/terminal
 ```
-- paste inside hugo.toml file the configurations founded at the theme description site. Is att some "how to configure section". Make sure to skip module and so parts.
-- Run ==hugo server -r [your_chosen_theme]== to see if it is working locally. Acess the server and celebrate! =]
-- Open the content folder inside the site directory. Create a ==posts== folder. Inside content folder  use: ==robocopy "[source_path]" "[destination_path]" /mir==. 
-- Back to the site's root and use ==hugo server== for your eyes only. =]. Inside ==public/post== are the html versions of  Obsidian's Markdown files.
-- Go to the Obsidian's source mode on your note. Lets take some FrontMater | Metadata | Proprieties to it. Insert between --- and --- the title, date, draft(false) and some tags(this onde on -|bullets). If you like to, You can have some templater on and so... Use robocopy inside contents & hugo server inside root to see the efects!
+- Paste inside hugo.toml file the configurations founded at the theme description site. Is att some "how to configure section". Make sure to skip module and so parts.
+- Run ==hugo server -t [your_chosen_theme]== to see if it is working locally. Acess the server and celebrate! =]
+- Open the "content" folder inside the site directory. Create a ==posts== folder. The structure at this point should be looking like this:
+```
+you_blog/           <- You use the next "robocopy" comand from here
+├── archetypes/
+├── content/     
+│   └── posts/      <- Yours Obsidian's posts go here
+├── data/
+├── layouts/
+├── public/
+│   └── posts/
+│       └── some_awsome_post/    <- Yours .html apears here
+├── static/
+├── themes/
+│   └── terminal/
+└── config.toml
+```
+- Inside ==content== folder  use: ==robocopy "[source_obsidian_path]" "[destination_you_blog_content/post_path]" /mir==. This does automate files's copy from one to other paths.
+- Back to the site's root and use ==hugo server -t [your_chosen_theme]== for your eyes only. =]. Inside ==you_blog\public\post== now are the html versions of Obsidian's Markdown files. And the obsidian posts are now reindenided!
+- Go to the Obsidian's source mode on your note. Lets take some FrontMater | Metadata | Proprieties to it. Insert between --- and --- the title, date, draft(false) and some tags(this onde on -|bullets). If you like to, You can have some templater plugin on and so... Use robocopy inside contents & hugo server inside root to see the efects!
 
-## Do some Images Attachments!
+## Do some Images Attachments
 - In your Vault, create a dedicated folder named `Attachments` for storing all your blog images.
 - Now i will put an totally perfect and precise image in this note. 
 	![Image Description](/images/smile.png)
@@ -196,10 +210,11 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"==. The one that you use to
 - Go to you git hub accont. Create blank private repo. Go to Settings. Register new pair off keys.
 - Test if you are in, from inside .ssh folder, use: ==ssh -T git@github.com== and you should get a welcome mensage. 
 - Now, from you repo root, use ==git remote add origin git@github.com:[your_username/repo_name.git]==.
-- Use ==hugo== again.
+- Use ==hugo== again. This will build the site inside the repo.
 - git add .
 - git commit
-- Only puplic folder is fot the host only. So then we need do take it to another branch. Use: 
+- Use ==git push -u origin master== so it can live inside the public one! Now inside the public repo we can se a mirror version of the blog files that live inside your machine.
+- Only the public folder need to go in the host server. So then we need do take only it to another branch. For this use: 
 ```
 git subtree split --prefix public -b hostinger-deploy
 git push origin hostinger-deploy:hostinger --force
@@ -316,14 +331,12 @@ if __name__ == "__main__":
 ```
 
 - Implement the repo manualy to someserver. Until make your self familiar to it. Then you can host it. Here i used a blank php one on hostinger.
-
 ## Host it
 - Enter your Git repository URL in the appropriate field of your provider account, based on whether it is public or private. In this example, I used a public repository with the following URL format: ==https://github.com/my_git_user/my_repo.git==.
 - Here, I opted for a Hostinger account and branch name. While it's not mandatory, I can confidently say it works smoothly and efficiently.
 - Once you did, Implemet manualy by using the function in you host provider. If is working, find and click on the auto-implement button. A modal will appear, explanning a webhook URL(copy this one), and a link to configure it on you github account. Acces id and paste in the correspondenting field. Make no other chages and save it. It is done! It should work just fine as this one here is.
 - You can also manage everything using the Python plugin! Configure it as demonstrated in the [Python Scripter](https://github.com/nickrallison/obsidian-python-scripter).
 - Start blogging! =]
-
 ## Styling Your Blog With some Custom Styles
 To improve the visual appearance of your blog, especially for images, create a `layouts/partials/extended_head.html` file:
 ```
@@ -392,23 +405,17 @@ Now, when refering to an image, just ==| logo or profile== input in the descript
 ![profile Description](/images/perfil.jpg)
 ```
 Select and use you favorite. Make sure to get ==[markup.goldmark.renderer] unsafe = true== on the hugo.toml file.
-
 ### Creating an About Page
 Create a new file `content/about.md`:
 ```
 ---
-
 title: "About"
-
 date: 2023-12-13
-
 draft: false
-
 ---
+
 # About Me
-
 !(profile Description)[profile_photo.png]
-
 Hi! 
 
 <!-- All other stuffs -->
@@ -417,22 +424,15 @@ Hi!
 ### Creating an Projects Page
 Create a new file `content/projects.md`:
 ```
-
 ---
-
 title: "Projects"
-
 date: 2023-12-13
-
 draft: false
-
 ---
 
 #  Projects
-
 <!-- All other stuffs -->
 ```
-
 ## Try an Auto run update
 - Install the Python scripter plugin. 
 - Put you update.py inside .obsidian/scripts/python folder and point you global python version on python version. And here is my contribuition to it:
@@ -564,6 +564,7 @@ if __name__ == "__main__":
 - Monitor server logs
 
 ## Considerations
+Some times is necessary to delete de site files so it can update. Or even the entire projetc. Every update increase the uploading time.
 It was verry fun and joyfull to see this blog being construct. I hope you to do it, so you can also spread your ideias and help others!
 
 ## References

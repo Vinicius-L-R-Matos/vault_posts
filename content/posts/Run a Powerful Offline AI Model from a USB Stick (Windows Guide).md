@@ -168,6 +168,7 @@ echo Starting AnythingLLM...
 start "" "%DRIVE_LETTER%\anythingllm\AnythingLLM.exe"
 ```
 Now, Dolphin + AnythingLLM launches just by running `start.bat`, direct from the pendrive!!! It will open the server and the client together.
+The first time you run it, dont forget to chose the  Ollama LLM on the configuration screen.
 
 ---
 ## 🧪 Interacting with Dolphin via Python (API)
