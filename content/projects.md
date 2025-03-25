@@ -3,7 +3,6 @@ title: "Projects"
 date: 2024-03-24
 draft: false
 ---
-# Projects
 Here is a list of open projects I’ve been working on:
 ### [Building a Blog System Using Obsidian](https://matosdatascience.com/posts/building-a-blog-system-using-obsidian/)
 Turn your ideias in to blog posts in instants!

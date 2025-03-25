@@ -5,7 +5,7 @@ draft: false
 ---
 # About Me
 
-![[Vinicius_Matos.png|profile]]
+![profile Vinicius Matos](/images/Vinicius_Matos.jpg)
 
 Hi! I'm Matos, a brazilian data science enthusiast passionate about turning complex data into clear insights. With a strong background in programming, statistics, and machine learning, I enjoy solving real-world problems through data-driven solutions.
 
