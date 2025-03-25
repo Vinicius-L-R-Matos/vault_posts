@@ -35,7 +35,7 @@ Why Dolphin?
 
 ⚠️ **Disclaimer**: Because of its uncensored nature, this model might respond to sensitive or dangerous queries. Use responsibly.
 
-!![Image Description](/images/dolphin_joke.png)
+![Image Description](/images/dolphin_joke.png)
 
 ---
 ## 🛠️ Routine Overview

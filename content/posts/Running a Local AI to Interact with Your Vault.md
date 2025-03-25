@@ -22,7 +22,7 @@ What’s happening here is that you’re setting up a local AI server using Olla
 Below, I’ll show you how to set up Ollama, integrate various AI models, and enhance your setup with additional tools. You can follow these steps to create your personalized AI environment.
 
 ## Did you ever run an Ollama?
-![[ollama.png|logo]]
+![logo Description](/images/ollama.png)
 [Ollama](https://github.com/ollama/ollama/tree/main/docs) is a lightweight, extensible framework for building and running language models on the local machine. It provides a simple API for creating, running, and managing models, as well as a library of pre-built models that can be easily used in a variety of applications.
 
 To get started right away, do the following:
@@ -1875,7 +1875,7 @@ if __name__ == "__main__":
 
 This whay i can ask some question, make conection to some ideias an talk whit you data. All by your self. It work fine.In my case better than any plugin. 
 The last created file on the self_questions folder is anwsered in the self_grahs one. If some graphs are out put, they are stored at self_graphs. Like this one bellow:
-![[self_graph.png|logo]]
+![logo Description](/images/self_graph.png)
 ## Summary
 This guide provides a comprehensive walkthrough for setting up Ollama on your local machine, integrating various AI models, managing user access, and enhancing your setup with tools like Stable Diffusion and BMO. By following these steps, you can create a robust and flexible AI environment tailored to your specific needs.
 

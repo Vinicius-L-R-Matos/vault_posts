@@ -28,7 +28,7 @@ With its official discontinuation in 2022 and migration to [Quarto](https://quar
 
 ## Why do this at all?
 The CEO of [Anthropic](https://www.anthropic.com/)—a startup founded by former OpenAI members—[Daniel Miessler](https://danielmiessler.com/) has shared insightful perspectives on AI, the future, and the transformative impact these technologies may have on our lives. One idea, in particular, resonates strongly with me:  
-!![Image Description](/images/daniel_miessler_x_post.png)
+![Image Description](/images/daniel_miessler_x_post.png)
 
 From my understanding, as AI becomes more decentralized, it will enable people across the globe to share ideas and create goods more efficiently. Regardless of whether AI is currently hyped in the tech market, the benefits of fostering open dialogue to improve the global economy are undeniable.
 
@@ -38,7 +38,7 @@ Like many great discoveries in history, it all begins with just a few words...
 
 ## How it works
 The following chart demonstrates how it’s done:
-!![Image Description](/images/blog_system.png)
+![Image Description](/images/blog_system.png)
 Putting it into a few words, it is expected that:
 
 - A post folder is provided.
@@ -87,7 +87,7 @@ git submodule add -f https://github.com/panr/hugo-theme-terminal.git themes/term
 ## Do some Images Attachments!
 - In your Vault, create a dedicated folder named `Attachments` for storing all your blog images.
 - Now i will put an totally perfect and precise image in this note. 
-	!![Image Description](/images/smile.png)
+	![Image Description](/images/smile.png)
 	If just do so, it wil be not consider like one to hugo. It need some temper. Spycy! =]
 - Paste this script in a imgs.py file on the root of your site. Remember to replace the directories variables (I made some alterations, becose when i did use the Chuck's one, it modifies the original path):
 ```
@@ -318,8 +318,8 @@ if __name__ == "__main__":
 - Implement the repo manualy to someserver. Until make your self familiar to it. Then you can host it. Here i used a blank php one on hostinger.
 
 ## Host it
-- Enter your Git repository URL in the appropriate field, based on whether it is public or private. In this example, I used a public repository with the following URL format: ==https://github.com/my_git_user/my_repo.git==.
-- Here, I opted for a Hostinger account. While it's not mandatory, I can confidently say it works smoothly and efficiently.
+- Enter your Git repository URL in the appropriate field of your provider account, based on whether it is public or private. In this example, I used a public repository with the following URL format: ==https://github.com/my_git_user/my_repo.git==.
+- Here, I opted for a Hostinger account and branch name. While it's not mandatory, I can confidently say it works smoothly and efficiently.
 - Once you did, Implemet manualy by using the function in you host provider. If is working, find and click on the auto-implement button. A modal will appear, explanning a webhook URL(copy this one), and a link to configure it on you github account. Acces id and paste in the correspondenting field. Make no other chages and save it. It is done! It should work just fine as this one here is.
 - You can also manage everything using the Python plugin! Configure it as demonstrated in the [Python Scripter](https://github.com/nickrallison/obsidian-python-scripter).
 - Start blogging! =]
@@ -379,17 +379,17 @@ Now, when refering to an image, just ==| logo or profile== input in the descript
 <!-- normal images in the blog -->
 ![Description](/images/image.png)
 <!-- use it on vault -->
-!![Image Description](/images/imagem.png)
+![Image Description](/images/imagem.png)
 
 <!-- for logo in the blog -->
 ![logo Description](/images/logo.png)
 <!-- use it on vault -->
-![[logo_imagem.png|logo]]
+![logo Description](/images/logo_imagem.png)
 
 <!-- for profile images in the blog -->
 ![profile Description](/images/photo.jpg)
 <!-- use it on vault -->
-![[perfil.jpg|profile]]
+![profile Description](/images/perfil.jpg)
 ```
 Select and use you favorite. Make sure to get ==[markup.goldmark.renderer] unsafe = true== on the hugo.toml file.
 

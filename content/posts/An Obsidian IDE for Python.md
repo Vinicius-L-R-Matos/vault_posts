@@ -19,7 +19,7 @@ Let me explain: You write your notes in your Vault. Then, you run a command, and
 ## Oh, I see now. This is a notebook!
 No, it’s not. It transforms every code block—including comments—into an independent `script.py` inside your `.obsidian\scripts\python` folder. From there, you can grab it and start deploying or packaging it.
 
-!![Image Description](/images/obsidianicon.png)
+![Image Description](/images/obsidianicon.png)
 ## But the Python Plugin doesn’t work for me here...
 No problem! You can also run it directly from your CLI/Cmd/PowerShell/Terminal—whatever you’re used to. When you do so, it will:
 - Find the most recently updated note in your vault.
