@@ -243,8 +243,8 @@ What’s happening here is that an Obsidian vault is feeding the content of the 
   
 
   <div class="post-content"><div>
-        <h2 id="from-vaults-folder-to-blogs-feed">From: Vault&rsquo;s folder. To: Blog&rsquo;s feed<a href="#from-vaults-folder-to-blogs-feed" class="hanchor" ariaLabel="Anchor">#</a> </h2>
-<p>This is my personal blogging pipeline, inspired by the content creator <a href="https://www.youtube.com/watch?v=dnE7c0ELEH8&amp;list=PLazumvohNo-2qvB49-9RL4karLMmqBDas&amp;index=18">NetWorkChuck</a>. I hope this guide helps you express your ideas more effectively and share them with the world.</p>
+        <p>From: Vault&rsquo;s folder. To: Blog&rsquo;s feed
+This is my personal blogging pipeline, inspired by the content creator <a href="https://www.youtube.com/watch?v=dnE7c0ELEH8&amp;list=PLazumvohNo-2qvB49-9RL4karLMmqBDas&amp;index=18">NetWorkChuck</a>. I hope this guide helps you express your ideas more effectively and share them with the world.</p>
 <p>If you enjoy maintaining control over your publications and having some code-based automation fun, this approach should serve you well!</p>
 <p>What’s happening here is that an Obsidian vault is feeding the content of the posts you’re reading right now. Once everything is set up, the process requires minimal effort to keep running smoothly.</p>
 <p>Below, I’ll show you how I built this actually blog that you are reading and how everything works. So you can also do it for youself.</p>
@@ -279,6 +279,7 @@ Putting it into a few words, it is expected that:</p>
 <li>Here, I used Windows as the operating system. Feel free to adapt the steps for others.</li>
 </ul>
 <h2 id="the-setup">The Setup<a href="#the-setup" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>Thouse are all you need to prepare:</p>
 <ul>
 <li><a href="https://obsidian.md/download">Download</a> and install Obsidian.</li>
 <li>In your preferred Vault, create a folder named ==posts==. This folder will house all your blog content.</li>
@@ -295,20 +296,35 @@ Putting it into a few words, it is expected that:</p>
 <li>Navigate to the directory where you want to store your site files from the CMD. Then, use the following command in your terminal: ==hugo new site [your_site_name]===.</li>
 <li>Inicialize hit repository in the roo of the site projetc, add name and email configs, and find your the theme. Here i chise the terminal:</li>
 </ul>
-<pre tabindex="0"><code>  
-git init
+<pre tabindex="0"><code>git init
 git config --global user.name &#34;Your Name&#34;
 git config --global user.email &#34;your.email@example.com&#34; 
 #Find a theme ---&gt; https://themes.gohugo.io/ and clone it:
 git submodule add -f https://github.com/panr/hugo-theme-terminal.git themes/terminal
 </code></pre><ul>
-<li>paste inside hugo.toml file the configurations founded at the theme description site. Is att some &ldquo;how to configure section&rdquo;. Make sure to skip module and so parts.</li>
-<li>Run ==hugo server -r [your_chosen_theme]== to see if it is working locally. Acess the server and celebrate! =]</li>
-<li>Open the content folder inside the site directory. Create a ==posts== folder. Inside content folder  use: ==robocopy &ldquo;[source_path]&rdquo; &ldquo;[destination_path]&rdquo; /mir==.</li>
-<li>Back to the site&rsquo;s root and use ==hugo server== for your eyes only. =]. Inside ==public/post== are the html versions of  Obsidian&rsquo;s Markdown files.</li>
-<li>Go to the Obsidian&rsquo;s source mode on your note. Lets take some FrontMater | Metadata | Proprieties to it. Insert between &mdash; and &mdash; the title, date, draft(false) and some tags(this onde on -|bullets). If you like to, You can have some templater on and so&hellip; Use robocopy inside contents &amp; hugo server inside root to see the efects!</li>
+<li>Paste inside hugo.toml file the configurations founded at the theme description site. Is att some &ldquo;how to configure section&rdquo;. Make sure to skip module and so parts.</li>
+<li>Run ==hugo server -t [your_chosen_theme]== to see if it is working locally. Acess the server and celebrate! =]</li>
+<li>Open the &ldquo;content&rdquo; folder inside the site directory. Create a ==posts== folder. The structure at this point should be looking like this:</li>
 </ul>
-<h2 id="do-some-images-attachments">Do some Images Attachments!<a href="#do-some-images-attachments" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<pre tabindex="0"><code>you_blog/           &lt;- You use the next &#34;robocopy&#34; comand from here
+├── archetypes/
+├── content/     
+│   └── posts/      &lt;- Yours Obsidian&#39;s posts go here
+├── data/
+├── layouts/
+├── public/
+│   └── posts/
+│       └── some_awsome_post/    &lt;- Yours .html apears here
+├── static/
+├── themes/
+│   └── terminal/
+└── config.toml
+</code></pre><ul>
+<li>Inside ==content== folder  use: ==robocopy &ldquo;[source_obsidian_path]&rdquo; &ldquo;[destination_you_blog_content/post_path]&rdquo; /mir==. This does automate files&rsquo;s copy from one to other paths.</li>
+<li>Back to the site&rsquo;s root and use ==hugo server -t [your_chosen_theme]== for your eyes only. =]. Inside ==you_blog\public\post== now are the html versions of Obsidian&rsquo;s Markdown files. And the obsidian posts are now reindenided!</li>
+<li>Go to the Obsidian&rsquo;s source mode on your note. Lets take some FrontMater | Metadata | Proprieties to it. Insert between &mdash; and &mdash; the title, date, draft(false) and some tags(this onde on -|bullets). If you like to, You can have some templater plugin on and so&hellip; Use robocopy inside contents &amp; hugo server inside root to see the efects!</li>
+</ul>
+<h2 id="do-some-images-attachments">Do some Images Attachments<a href="#do-some-images-attachments" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <ul>
 <li>In your Vault, create a dedicated folder named <code>Attachments</code> for storing all your blog images.</li>
 <li>Now i will put an totally perfect and precise image in this note.
@@ -420,10 +436,11 @@ ssh-keygen -t rsa -b 4096 -C &ldquo;<a href="mailto:your_email@example.com">your
 <li>Go to you git hub accont. Create blank private repo. Go to Settings. Register new pair off keys.</li>
 <li>Test if you are in, from inside .ssh folder, use: ==ssh -T <a href="mailto:git@github.com">git@github.com</a>== and you should get a welcome mensage.</li>
 <li>Now, from you repo root, use ==git remote add origin <a href="mailto:git@github.com">git@github.com</a>:[your_username/repo_name.git]==.</li>
-<li>Use ==hugo== again.</li>
+<li>Use ==hugo== again. This will build the site inside the repo.</li>
 <li>git add .</li>
 <li>git commit</li>
-<li>Only puplic folder is fot the host only. So then we need do take it to another branch. Use:</li>
+<li>Use ==git push -u origin master== so it can live inside the public one! Now inside the public repo we can se a mirror version of the blog files that live inside your machine.</li>
+<li>Only the public folder need to go in the host server. So then we need do take only it to another branch. For this use:</li>
 </ul>
 <pre tabindex="0"><code>git subtree split --prefix public -b hostinger-deploy
 git push origin hostinger-deploy:hostinger --force
@@ -613,36 +630,25 @@ if __name__ == &#34;__main__&#34;:
 <h3 id="creating-an-about-page">Creating an About Page<a href="#creating-an-about-page" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>Create a new file <code>content/about.md</code>:</p>
 <pre tabindex="0"><code>---
-
 title: &#34;About&#34;
-
 date: 2023-12-13
-
 draft: false
-
 ---
+
 # About Me
-
 !(profile Description)[profile_photo.png]
-
 Hi! 
 
 &lt;!-- All other stuffs --&gt;
 </code></pre><h3 id="creating-an-projects-page">Creating an Projects Page<a href="#creating-an-projects-page" class="hanchor" ariaLabel="Anchor">#</a> </h3>
 <p>Create a new file <code>content/projects.md</code>:</p>
-<pre tabindex="0"><code>
----
-
+<pre tabindex="0"><code>---
 title: &#34;Projects&#34;
-
 date: 2023-12-13
-
 draft: false
-
 ---
 
 #  Projects
-
 &lt;!-- All other stuffs --&gt;
 </code></pre><h2 id="try-an-auto-run-update">Try an Auto run update<a href="#try-an-auto-run-update" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <ul>
@@ -778,7 +784,8 @@ if __name__ == &#34;__main__&#34;:
 <li>Monitor server logs</li>
 </ul>
 <h2 id="considerations">Considerations<a href="#considerations" class="hanchor" ariaLabel="Anchor">#</a> </h2>
-<p>It was verry fun and joyfull to see this blog being construct. I hope you to do it, so you can also spread your ideias and help others!</p>
+<p>Some times is necessary to delete de site files so it can update. Or even the entire projetc. Every update increase the uploading time.
+It was verry fun and joyfull to see this blog being construct. I hope you to do it, so you can also spread your ideias and help others!</p>
 <h2 id="references">References<a href="#references" class="hanchor" ariaLabel="Anchor">#</a> </h2>
 <p><a href="https://www.youtube.com/watch?v=dnE7c0ELEH8&amp;list=PLazumvohNo-2qvB49-9RL4karLMmqBDas&amp;index=18">I started a blog&hellip;..in 2024 (why you should too)</a></p>
 
