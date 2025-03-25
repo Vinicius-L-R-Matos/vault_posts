@@ -3,10 +3,8 @@ title: "About"
 date: 2024-03-24
 draft: false
 ---
-
 # About Me
-![Vinicius_Matos](/images/Vinicius_Matos.png)
-
+![Vinicius_Matos](Vinicius_Matos.png)
 Hi! I'm Matos, a brazilian data science enthusiast passionate about turning complex data into clear insights. With a strong background in programming, statistics, and machine learning, I enjoy solving real-world problems through data-driven solutions.
 
 I’ve worked on a variety of projects since 2022 across analytics, automation, predictive modeling, automations and some LLM and SLM meaningfull use cases.

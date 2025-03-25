@@ -420,7 +420,7 @@ Hi!
 
 <!-- All other stuffs -->
 ```
-
+ 
 ### Creating an Projects Page
 Create a new file `content/projects.md`:
 ```
