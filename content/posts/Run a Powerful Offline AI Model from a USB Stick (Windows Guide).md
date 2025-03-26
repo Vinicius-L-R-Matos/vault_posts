@@ -5,6 +5,7 @@ draft: false
 tags:
   - python
   - Pendrive
+  - AI
 categories:
   - SecOps
 series:
